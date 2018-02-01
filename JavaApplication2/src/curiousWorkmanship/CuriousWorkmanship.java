@@ -5,6 +5,7 @@
  */
 package curiousWorkmanship;
 
+import byui.cit260.curiousWorkmanship.model.ListItem;
 import byui.cit260.curiousWorkmanship.model.Player;
 import byui.cit260.curiousWorkmanship.model.TeamMember;
 import static byui.cit260.curiousWorkmanship.model.TeamMember.Luis;
@@ -19,11 +20,8 @@ public class CuriousWorkmanship {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Player playerOne = new Player();
-        
-        
+        Player playerOne = new Player();    
         playerOne.setName("Fred Flinston");
-        
         String playerOneName = playerOne.getName();
         
         System.out.println(playerOne.toString());
@@ -32,6 +30,12 @@ public class CuriousWorkmanship {
         TeamMember.Luis.getTitle();
         
         System.out.println(Luis.toString());
+        
+        ListItem itemOne = new ListItem();
+        itemOne.setName("hammer");
+        itemOne.setNumber(3);
+        
+        System.out.println(itemOne.toString());
         
     }
     
