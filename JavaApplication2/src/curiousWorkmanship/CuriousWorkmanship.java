@@ -10,6 +10,7 @@ import byui.cit260.curiousWorkmanship.model.Player;
 import byui.cit260.curiousWorkmanship.model.TeamMember;
 import byui.cit260.curiousWorkmanship.model.CropData;
 import static byui.cit260.curiousWorkmanship.model.TeamMember.Luis;
+import byui.cit260.curiousWorkmanship.model.Location;
 
 /**
  *
@@ -64,8 +65,12 @@ public class CuriousWorkmanship {
         System.out.println(firstData.toString());
         
  
+        //-------location class-------
+         Location location = new Location();
         
-        
+         location.setDescription("The Ruler's Court");
+         
+         System.out.println(location.toString());
     }
     
 }
