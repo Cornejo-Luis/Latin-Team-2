@@ -12,8 +12,10 @@ import java.util.Objects;
  * @author joyce
  */
 public class Player implements Serializable{
+    
+    //class instance variable
     private String name;
-
+            //constructor
     public Player() {
     }
     

@@ -21,8 +21,11 @@ public class CuriousWorkmanship {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Player playerOne = new Player();    
+        
+        Player playerOne = new Player();   
+        
         playerOne.setName("Fred Flinston");
+        
         String playerOneName = playerOne.getName();
         
         System.out.println(playerOne.toString());

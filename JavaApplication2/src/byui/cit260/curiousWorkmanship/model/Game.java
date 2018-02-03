@@ -11,6 +11,7 @@ import java.util.ArrayList;
  * @author joyce
  */
 public class Game implements Serializable{
+    //class instance variables
     private Map theMap;
     private Player thePlayer;
     private CropData cropData;
@@ -18,7 +19,7 @@ public class Game implements Serializable{
     private ArrayList<ListItem> animals;
     private ArrayList<ListItem> tools;
     private ArrayList<ListItem> provitions;
-
+    //constructor
     public Game() {
     }
     
