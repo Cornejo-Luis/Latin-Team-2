@@ -8,6 +8,7 @@ package curiousWorkmanship;
 import byui.cit260.curiousWorkmanship.model.ListItem;
 import byui.cit260.curiousWorkmanship.model.Player;
 import byui.cit260.curiousWorkmanship.model.TeamMember;
+import byui.cit260.curiousWorkmanship.model.CropData;
 import static byui.cit260.curiousWorkmanship.model.TeamMember.Luis;
 
 /**
@@ -36,6 +37,31 @@ public class CuriousWorkmanship {
         itemOne.setNumber(3);
         
         System.out.println(itemOne.toString());
+        
+        //---------  Class CropData --------------
+        CropData firstData = new CropData();
+        firstData.setYear(1);
+        firstData.setPopulation(100);
+        firstData.setAcresOwned(3);
+        firstData.setCropYield(4);
+        firstData.setWheatInStore(5);
+        firstData.setNumberWhoDied(6);
+        firstData.setNewPeople(7);
+        firstData.setHarvest(8);
+        firstData.setHarvestAfterOffering(9);
+        firstData.setOffering(10);
+        firstData.setOfferingBushels(11);
+        firstData.setPeopleFed(12);
+        firstData.setAcresPlanted(13);
+        firstData.setNumStarved(14);
+        firstData.setEatenByRats(15);
+        firstData.setWheatForPeople(16);
+        
+
+        System.out.println(firstData.toString());
+        
+ 
+        
         
     }
     
