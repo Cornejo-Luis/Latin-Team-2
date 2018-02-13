@@ -39,12 +39,12 @@ public class CropControlTest {
         System.out.println("buyland");
         CropData cropyData = new CropData();
         cropyData.setWheatInStore(1000);
-        cropyData.setAcresOwned(2800);
-        cropyData.setPopulation(4);
+        cropyData.setAcresOwned(2000);
+        cropyData.setPopulation(10);
         
-        int acresToBuy =10;
-        int landPrice =20;
-        int expResult =2810;
+        int acresToBuy =100;
+        int landPrice =10;
+        int expResult =2100;
         int result = CropControl.buyland(acresToBuy, landPrice, cropyData);
         assertEquals(expResult,result);
         System.out.println(result);
