@@ -15,7 +15,6 @@ public class Game implements Serializable{
     private Map theMap;
     private Player thePlayer;
     private CropData cropData;
-    private TeamMember team[];
     private ArrayList<ListItem> animals;
     private ArrayList<ListItem> tools;
     private ArrayList<ListItem> provitions;
@@ -45,14 +44,6 @@ public class Game implements Serializable{
 
     public void setCropData(CropData cropData) {
         this.cropData = cropData;
-    }
-
-    public TeamMember[] getTeam() {
-        return team;
-    }
-
-    public void setTeam(TeamMember[] team) {
-        this.team = team;
     }
 
     public ArrayList<ListItem> getAnimals() {
