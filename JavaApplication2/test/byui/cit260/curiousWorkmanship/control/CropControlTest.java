@@ -37,16 +37,22 @@ public class CropControlTest {
     @Test
     public void testBuyland() {
         System.out.println("buyland");
-        CropData cropyData = new CropData();
+        //define some variables of the game
+        CropData cropyData = new CropData(); // constructor
         cropyData.setWheatInStore(1000);
         cropyData.setAcresOwned(2000);
         cropyData.setPopulation(10);
         
         int acresToBuy =100;
+        //random function
         int landPrice =10;
+        //value we expected
         int expResult =2100;
+        //call the method and assign the value into a variable
         int result = CropControl.buyland(acresToBuy, landPrice, cropyData);
+        //a camparation is made to know if the result is the expected
         assertEquals(expResult,result);
+        //print the result
         System.out.println(result);
         // TODO review the generated test code and remove the default call to fail.
         
