@@ -50,7 +50,6 @@ public class CropControlTest {
         System.out.println(result);
         // TODO review the generated test code and remove the default call to fail.
       
-       
         
     }
     
