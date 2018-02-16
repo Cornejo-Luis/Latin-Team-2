@@ -49,7 +49,7 @@ public class CropControl {
             return -1;
             
         //   if acresToBuy > 10 x numberOfPeople, return -1
-            if(acresToBuy> 10 * population)
+            if(acresToBuy > 10 * population)
                 return -1;
         
         //  if wheatInStore < landPrice x acresToBuy, return -1
@@ -69,4 +69,29 @@ public class CropControl {
         
     }
     
+    
+    // The feedPeople method
+    // Purpose: To feed the people
+    // Parameters: the number of bushels of wheat to feed the people
+    // Returns: the amount of wheat left after feeding the people.
+    // Pre-conditions: number of bushels of wheat to feed the people must be positive
+    // and <= the total amount of wheat
+
+     public static int feedPeople(int wheatToFeed, byui.cit260.curiousWorkmanship.model.CropData cropData)
+    {
+        int wheatInStore = cropData.getWheatInStore();
+        int wheatForPeople = cropData.getWheatInStore();
+        // if wheatToFeed < 0, return -1
+           if (wheatToFeed < 0)
+               return -1;
+        // if wheatToFeed > wheatInStore, return -1
+           if (wheatToFeed > wheatInStore)
+               return -1;
+        // wheatToFeed = wheatForPeople
+           wheatToFeed = wheatForPeople;
+        // wheatInStore = wheatInStore - wheatToFeed
+           wheatInStore = wheatInStore - wheatToFeed;
+        // return wheatInStore
+           return wheatInStore;        
+    }
 }
