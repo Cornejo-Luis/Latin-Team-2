@@ -54,7 +54,7 @@ public class CropControlTest {
         //call the method and assign the value into a variable
         int result = CropControl.buyland(acresToBuy, landPrice, cropyData);
         //a camparation is made to know if the result is the expected
-        assertEquals(expResult,result,2810);
+        assertEquals(expResult,result);
         //print the result
         System.out.println(result);
         
@@ -74,7 +74,7 @@ public class CropControlTest {
         //call the method and assign the value into a variable
         result = CropControl.buyland(acresToBuy, landPrice, cropyData2);
         //a camparation is made to know if the result is the expected
-        assertEquals(expResult,result,-1);
+        assertEquals(expResult,result);
         //print the result
         System.out.println(result);
         
@@ -95,7 +95,7 @@ public class CropControlTest {
         //call the method and assign the value into a variable
         result = CropControl.buyland(acresToBuy, landPrice, cropyData3);
         //a camparation is made to know if the result is the expected
-        assertEquals(expResult,result,-1);
+        assertEquals(expResult,result);
         //print the result
         System.out.println(result);
         
@@ -116,7 +116,7 @@ public class CropControlTest {
         //call the method and assign the value into a variable
         result = CropControl.buyland(acresToBuy, landPrice, cropyData4);
         //a camparation is made to know if the result is the expected
-        assertEquals(expResult,result,2100);
+        assertEquals(expResult,result);
         //print the result
         System.out.println(result);
         
@@ -137,10 +137,92 @@ public class CropControlTest {
         //call the method and assign the value into a variable
         result = CropControl.buyland(acresToBuy, landPrice, cropyData5);
         //a camparation is made to know if the result is the expected
-        assertEquals(expResult,result,2000);
+        assertEquals(expResult,result);
         //print the result
         System.out.println(result);
         
     }
+
+    /**
+     * Test of calcLandCost method, of class CropControl.
+     */
+    @Test
+    public void testCalcLandCost() {
+        System.out.println("calcLandCost");
+        int expResult = 0;
+        int result = CropControl.calcLandCost();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of feedPeople method, of class CropControl.
+     */
+    @Test
+    public void testFeedPeople() {
+        System.out.println("feedPeople");
+        
+        //-----Test Case 1 ------
+        System.out.println("\tTest case 1");
+        CropData cropyData1 = new CropData();
+        cropyData1.setWheatInStore(1000);
+        
+        int wheatToFeed = 900;
+        int expResult = 100;
+        int result = CropControl.feedPeople(wheatToFeed, cropyData1);
+        assertEquals(expResult, result);
+        System.out.println(result);
+        
+         //-----Test Case 2 ------
+        System.out.println("\tTest case 2");
+        CropData cropyData2 = new CropData();
+        cropyData2.setWheatInStore(1000);
+        
+        wheatToFeed = -5;
+        expResult = -1;
+        result = CropControl.feedPeople(wheatToFeed, cropyData2);
+        assertEquals(expResult, result);
+        System.out.println(result);
+        
+        //-----Test Case 3 ------
+        System.out.println("\tTest case 3");
+        CropData cropyData3 = new CropData();
+        cropyData3.setWheatInStore(1000);
+        
+        wheatToFeed = 2000;
+        expResult = -1;
+        result = CropControl.feedPeople(wheatToFeed, cropyData3);
+        assertEquals(expResult, result);
+        System.out.println(result);
+        
+        //-----Test Case 4 ------
+        System.out.println("\tTest case 4");
+        CropData cropyData4 = new CropData();
+        cropyData4.setWheatInStore(1000);
+        
+        wheatToFeed = 1000;
+        expResult = 0;
+        result = CropControl.feedPeople(wheatToFeed, cropyData4);
+        assertEquals(expResult, result);
+        System.out.println(result);
+        
+        //-----Test Case 5 ------
+        System.out.println("\tTest case 5");
+        CropData cropyData5 = new CropData();
+        cropyData5.setWheatInStore(1000);
+        
+        wheatToFeed = 0;
+        expResult = 1000;
+        result = CropControl.feedPeople(wheatToFeed, cropyData5);
+        assertEquals(expResult, result);
+        System.out.println(result);
+        
+        
+    }
+
+    
     
 }
+
+        
