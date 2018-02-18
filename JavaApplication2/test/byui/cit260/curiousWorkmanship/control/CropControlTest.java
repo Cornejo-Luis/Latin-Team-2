@@ -6,8 +6,10 @@
 package byui.cit260.curiousWorkmanship.control;
 
 import byui.cit260.curiousWorkmanship.model.CropData;
+import org.junit.After;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 /**
  *
@@ -16,6 +18,14 @@ import static org.junit.Assert.*;
 public class CropControlTest {
     
     public CropControlTest() {
+    }
+
+    @Before
+    public void setUp() throws Exception {
+    }
+
+    @After
+    public void tearDown() throws Exception {
     }
 
     /**
@@ -141,6 +151,155 @@ public class CropControlTest {
         //print the result
         System.out.println(result);
         
+    }
+
+    /**
+     * Test of calcLandCost method, of class CropControl.
+     */
+    @Test
+    public void testCalcLandCost() {
+        System.out.println("calcLandCost");
+        int expResult = 0;
+        int result = CropControl.calcLandCost();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of feedPeople method, of class CropControl.
+     */
+    @Test
+    public void testFeedPeople() {
+        System.out.println("feedPeople");
+        int wheatToFeed = 0;
+        CropData cropData = null;
+        int expResult = 0;
+        int result = CropControl.feedPeople(wheatToFeed, cropData);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of plantcrops method, of class CropControl.
+     */
+//    @Test
+//    public void testPlantcrops() {
+//        System.out.println("plantcrops");
+//        int acresToPlant = 0;
+//        int acresPlanted = 0;
+//        int bushelsToPlant = 0;
+//        CropData cropData = null;
+//        int expResult = 0;
+//        int result = CropControl.plantcrops(acresToPlant, acresPlanted, bushelsToPlant, cropData);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+    @Test
+    public void testPlantcrops() {
+        System.out.println("plantcrops");
+        
+        //-----Test Case 1 ------
+        System.out.println("\tTest case 1");
+        //define some variables of the game
+        CropData cropyData = new CropData(); // constructor
+        cropyData.setWheatInStore(2800);
+        cropyData.setAcresOwned(1000);
+        cropyData.setPopulation(100);
+        
+        int acresToPlant = 1000;
+        int bushelsToPlant = 500;
+
+        //value we expected
+        int expResult =2300;
+        //call the method and assign the value into a variable
+        int result = CropControl.plantcrops(acresToPlant, bushelsToPlant, cropyData);
+        //a camparation is made to know if the result is the expected
+        assertEquals(expResult,result,2300);
+        //print the result
+        System.out.println(result);
+        
+                //-----Test Case 2 ------
+        System.out.println("\tTest case 2");
+        //define some variables of the game
+        CropData cropyData2 = new CropData(); // constructor
+        cropyData2.setWheatInStore(2800);
+        cropyData2.setAcresOwned(1000);
+        cropyData2.setPopulation(100);
+        
+        acresToPlant = 1001;
+        bushelsToPlant = 500;
+
+        //value we expected
+        expResult =-1;
+        //call the method and assign the value into a variable
+        result = CropControl.plantcrops(acresToPlant, bushelsToPlant, cropyData);
+        //a camparation is made to know if the result is the expected
+        assertEquals(expResult,result,-1);
+        //print the result
+        System.out.println(result);
+        
+                        //-----Test Case 3 ------
+        System.out.println("\tTest case 3");
+        //define some variables of the game
+        CropData cropyData3 = new CropData(); // constructor
+        cropyData3.setWheatInStore(2800);
+        cropyData3.setAcresOwned(1000);
+        cropyData3.setPopulation(100);
+        
+        acresToPlant = 2000;
+        bushelsToPlant = 500;
+
+        //value we expected
+        expResult =-1;
+        //call the method and assign the value into a variable
+        result = CropControl.plantcrops(acresToPlant, bushelsToPlant, cropyData);
+        //a camparation is made to know if the result is the expected
+        assertEquals(expResult,result,-1);
+        //print the result
+        System.out.println(result);
+        
+        //-----Test Case 4 ------
+        System.out.println("\tTest case 4");
+        //define some variables of the game
+        CropData cropyData4 = new CropData(); // constructor
+        cropyData4.setWheatInStore(2800);
+        cropyData4.setAcresOwned(1000);
+        cropyData4.setPopulation(100);
+        
+        acresToPlant = -1000;
+        bushelsToPlant = 500;
+
+        //value we expected
+        expResult =-1;
+        //call the method and assign the value into a variable
+        result = CropControl.plantcrops(acresToPlant, bushelsToPlant, cropyData);
+        //a camparation is made to know if the result is the expected
+        assertEquals(expResult,result,-1);
+        //print the result
+        System.out.println(result);
+        
+        //-----Test Case 5 ------
+        System.out.println("\tTest case 5");
+        //define some variables of the game
+        CropData cropyData5 = new CropData(); // constructor
+        cropyData5.setWheatInStore(2800);
+        cropyData5.setAcresOwned(1000);
+        cropyData5.setPopulation(50);
+        
+        acresToPlant = 500;
+        bushelsToPlant = 500;
+
+        //value we expected
+        expResult =2550;
+        //call the method and assign the value into a variable
+        result = CropControl.plantcrops(acresToPlant, bushelsToPlant, cropyData);
+        //a camparation is made to know if the result is the expected
+        assertEquals(expResult,result,2550);
+        //print the result
+        System.out.println(result);
     }
     
 }

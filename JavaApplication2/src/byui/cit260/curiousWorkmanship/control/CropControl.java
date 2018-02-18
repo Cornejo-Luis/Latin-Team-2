@@ -43,7 +43,6 @@ public class CropControl {
         int acresOwned = cropData.getAcresOwned();
          
         
-        
         //      if acresToBuy < 0, return -1
             if(acresToBuy<0)
             return -1;
@@ -69,7 +68,6 @@ public class CropControl {
         
     }
     
-    
     // The feedPeople method
     // Purpose: To feed the people
     // Parameters: the number of bushels of wheat to feed the people
@@ -94,4 +92,54 @@ public class CropControl {
         // return wheatInStore
            return wheatInStore;        
     }
+     
+     // The plantCrops method
+        // Purpose: To plant crops
+        // Parameters: bushels in storage, acres owned, population, acres to plant
+        // Returns: the number of acres planted
+        // Pre-conditions: acres must be positive
+        // The City will have this much land to plant
+        // The City will have enough wheat in storage to plant this many acre
+        // The City will have enough population to plant
+     
+       public static int plantcrops(int acresToPlant, int bushelsToPlant,  byui.cit260.curiousWorkmanship.model.CropData cropData)
+     {
+        int population = cropData.getPopulation();
+        int wheatInStore = cropData.getWheatInStore();
+        int acresOwned = cropData.getAcresOwned();
+        
+         //if acresToplant < 0, return -1
+         if (acresToPlant<0)
+             return -1;
+         
+         //If population<0, return -1
+         if (population<0)
+             return -1;
+         
+        //if acresToPlant > acres_owned  return -1
+        if(acresToPlant>acresOwned)
+            return -1;
+        
+        //if acresToPlant > population * 10 return -1
+        if (acresToPlant>population * 10)
+            return -1;
+                    
+    
+        //bushelsToPlant = acresToPlant / 2;
+        bushelsToPlant = acresToPlant/2;
+        
+        //bushels_in_storage = bushels_inStorage - bushelsToPlant
+        wheatInStore = wheatInStore - bushelsToPlant;
+        
+        //save bushels_in_storage
+        
+        //return bushelsToPlant
+        //return bushelsToPlant;
+        
+        return wheatInStore;
+        
+
+     }
+     
+
 }
