@@ -78,15 +78,15 @@ public class CropControl {
      public static int feedPeople(int wheatToFeed, byui.cit260.curiousWorkmanship.model.CropData cropData)
     {
         int wheatInStore = cropData.getWheatInStore();
-        int wheatForPeople = cropData.getWheatInStore();
+        int wheatForPeople = cropData.getWheatForPeople();
         // if wheatToFeed < 0, return -1
            if (wheatToFeed < 0)
                return -1;
         // if wheatToFeed > wheatInStore, return -1
            if (wheatToFeed > wheatInStore)
                return -1;
-        // wheatToFeed = wheatForPeople
-           wheatToFeed = wheatForPeople;
+        // wheatForPeople = wheatToFeed
+           wheatForPeople = wheatToFeed;
         // wheatInStore = wheatInStore - wheatToFeed
            wheatInStore = wheatInStore - wheatToFeed;
         // return wheatInStore
