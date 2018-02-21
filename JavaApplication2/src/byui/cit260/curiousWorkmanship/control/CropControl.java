@@ -7,6 +7,7 @@
 package byui.cit260.curiousWorkmanship.control;
 import java.util.Random;
 import byui.cit260.curiousWorkmanship.model.CropData;
+import java.util.Scanner;
 
 /**
  *
@@ -144,5 +145,29 @@ public class CropControl {
 
      }
      
+       public static void setOffering(int percentOffering){
+       
+           int m = 0;
+           Scanner reader = new Scanner(System.in);
+        //The program ask the user to input a percentage of harvest for offering
+        
+        do {
+            System.out.println("Please enter the percentage you want to pay in tithes: ");  
+           int n = reader.nextInt();
+          //condition 
+          //If the number entered is less than 0, the program goes to step 1 
+          //If the number entered is greater than 100, the program goes to step 1.
+           if(n>=0 && n<=100)
+           {     m=1;
+                 //The numbered entered by the user is saved.
+                 percentOffering = n;
+           }
+           
+        } while(m == 0);
+        
+        
+
+       
+       }
 
 }

@@ -351,6 +351,15 @@ public class CropControlTest {
         System.out.println(result);
     }
 
+    @Test
+    public void testsetOffeting() {
+    
+        System.out.println("------SET OFFERING-----");
+         CropData cropyData = new CropData();
+         
+    
+    }
+          
     
 }
 
