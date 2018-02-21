@@ -5,11 +5,13 @@
  */
 package curiousWorkmanship;
 
+import MainMenuView.MainMenuView;
 import byui.cit260.curiousWorkmanship.control.CropControl;
 import byui.cit260.curiousWorkmanship.model.ListItem;
 import byui.cit260.curiousWorkmanship.model.Player;
 import byui.cit260.curiousWorkmanship.model.TeamMember;
 import byui.cit260.curiousWorkmanship.model.CropData;
+import byui.cit260.curiousWorkmanship.model.Game;
 import static byui.cit260.curiousWorkmanship.model.TeamMember.Luis;
 import byui.cit260.curiousWorkmanship.model.Location;
 
@@ -18,6 +20,20 @@ import byui.cit260.curiousWorkmanship.model.Location;
  * @author joyce
  */
 public class CuriousWorkmanship {
+
+    // variable for keeping a reference to the Game object
+    private static Game theGame = null;
+
+    public static Game getTheGame() {
+        return theGame;
+    }
+
+    public static void setTheGame(Game theGame) {
+        CuriousWorkmanship.theGame = theGame;
+    }
+
+    // main function - entry point for the program
+    // runs the main menu
 
     /**
      * @param args the command line arguments
@@ -72,6 +88,12 @@ public class CuriousWorkmanship {
          location.setDescription("The Ruler's Court");
          
          System.out.println(location.toString());
+         
+         
+         //Main Menu View
+         MainMenuView mmv = new MainMenuView();
+         mmv.displayMenuView();
+
     }
     
 }
