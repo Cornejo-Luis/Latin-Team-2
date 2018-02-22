@@ -40,7 +40,7 @@ public class CuriousWorkmanship {
      */
     public static void main(String[] args) {
         
-        Player playerOne = new Player();   
+       /* Player playerOne = new Player();   
         
         playerOne.setName("Fred Flinston");
         
@@ -89,7 +89,8 @@ public class CuriousWorkmanship {
          
          System.out.println(location.toString());
          
-         
+         */
+                 
          //Main Menu View
          MainMenuView mmv = new MainMenuView();
          mmv.displayMenuView();
