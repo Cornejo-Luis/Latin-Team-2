@@ -264,7 +264,7 @@ public class CropControlTest {
         //value we expected
         int expResult =2300;
         //call the method and assign the value into a variable
-        int result = CropControl.plantcrops(acresToPlant, bushelsToPlant, cropyData);
+        int result = CropControl.plantcrops(acresToPlant, cropyData);
         //a camparation is made to know if the result is the expected
         assertEquals(expResult,result,2300);
         //print the result
@@ -284,7 +284,7 @@ public class CropControlTest {
         //value we expected
         expResult =-1;
         //call the method and assign the value into a variable
-        result = CropControl.plantcrops(acresToPlant, bushelsToPlant, cropyData);
+        result = CropControl.plantcrops(acresToPlant, cropyData);
         //a camparation is made to know if the result is the expected
         assertEquals(expResult,result,-1);
         //print the result
@@ -304,7 +304,7 @@ public class CropControlTest {
         //value we expected
         expResult =-1;
         //call the method and assign the value into a variable
-        result = CropControl.plantcrops(acresToPlant, bushelsToPlant, cropyData);
+        result = CropControl.plantcrops(acresToPlant, cropyData);
         //a camparation is made to know if the result is the expected
         assertEquals(expResult,result,-1);
         //print the result
@@ -324,7 +324,7 @@ public class CropControlTest {
         //value we expected
         expResult =-1;
         //call the method and assign the value into a variable
-        result = CropControl.plantcrops(acresToPlant, bushelsToPlant, cropyData);
+        result = CropControl.plantcrops(acresToPlant, cropyData);
         //a camparation is made to know if the result is the expected
         assertEquals(expResult,result,-1);
         //print the result
@@ -344,7 +344,7 @@ public class CropControlTest {
         //value we expected
         expResult =2550;
         //call the method and assign the value into a variable
-        result = CropControl.plantcrops(acresToPlant, bushelsToPlant, cropyData);
+        result = CropControl.plantcrops(acresToPlant, cropyData);
         //a camparation is made to know if the result is the expected
         assertEquals(expResult,result,2550);
         //print the result

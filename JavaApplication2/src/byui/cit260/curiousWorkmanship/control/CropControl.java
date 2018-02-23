@@ -106,18 +106,15 @@ public class CropControl {
         // The City will have enough wheat in storage to plant this many acre
         // The City will have enough population to plant
      
-       public static int plantcrops(int acresToPlant, int bushelsToPlant,  byui.cit260.curiousWorkmanship.model.CropData cropData)
+       public static int plantcrops(int acresToPlant,  byui.cit260.curiousWorkmanship.model.CropData cropData)
      {
         int population = cropData.getPopulation();
         int wheatInStore = cropData.getWheatInStore();
         int acresOwned = cropData.getAcresOwned();
+        int bushelsToPlant = 0;
         
          //if acresToplant < 0, return -1
          if (acresToPlant<0)
-             return -1;
-         
-         //If population<0, return -1
-         if (population<0)
              return -1;
          
         //if acresToPlant > acres_owned  return -1
@@ -128,23 +125,21 @@ public class CropControl {
         if (acresToPlant>population * 10)
             return -1;
                     
-    
         //bushelsToPlant = acresToPlant / 2;
         bushelsToPlant = acresToPlant/2;
         
         //bushels_in_storage = bushels_inStorage - bushelsToPlant
         wheatInStore = wheatInStore - bushelsToPlant;
         
-        //save bushels_in_storage
-        
-        //return bushelsToPlant
-        //return bushelsToPlant;
-        
-        return wheatInStore;
-        
+        //save the values
+         cropData.setWheatInStore(wheatInStore);
+         cropData.setAcresPlanted(acresToPlant);
+         
+        // return bushelsToPlant
+        return bushelsToPlant;
 
      }
-     
+    
        public static void setOffering(int percentOffering){
        
            int m = 0;
@@ -164,10 +159,5 @@ public class CropControl {
            }
            
         } while(m == 0);
-        
-        
-
-       
        }
-
 }
