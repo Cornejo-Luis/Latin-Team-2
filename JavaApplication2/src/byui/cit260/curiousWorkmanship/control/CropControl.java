@@ -23,6 +23,7 @@ public class CropControl {
     private static Random random = new Random();
 
     public static int calcLandCost() {
+        
             int landPrice = random.nextInt(LAND_RANGE)+LAND_BASE;
                                        
             return landPrice;
