@@ -48,6 +48,24 @@ public class CropView {
     CropControl.buyland(toBuy, price, theCropData);
    
  }
+ 
+// The feedPeopleView method
+// Purpose: interface with the user input for feedin the people
+// Parameters: none
+// Returns: none
+ public static void feedPeopleView()
+ {
+    
+    // Prompt the user to enter the number of acres to buy
+     System.out.print("\nHow many bushels of grain do you want to give to the people? "); 
+
+    //  Get the user’s input and save it.
+    int wheatForPeople = keyboard.nextInt();
+
+    // Call the buyLand( ) method in the control layer to buy the land
+    CropControl.feedPeople(wheatForPeople, theCropData);
+   
+ }
 
 
  // The runCropsView method()
@@ -69,7 +87,8 @@ public static void runCropsView()
 
     
     // as they are written
-
+    // call the feedPeopleView( ) method
+    feedPeopleView( );
  /*
 sellLandView()
 feedPeopleView()

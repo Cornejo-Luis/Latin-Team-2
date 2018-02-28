@@ -18,6 +18,28 @@ public class Game implements Serializable{
     private ArrayList<ListItem> animals;
     private ArrayList<ListItem> tools;
     private ArrayList<ListItem> provitions;
+    
+    private CropData theCrops = null;
+
+        // the getCrops() method
+        // Purpose: get a reference to the crop object
+        // Parameters: none
+        // Returns: a reference to a crop object
+        public CropData getCrop()
+        {
+            return theCrops;
+        }
+
+        // the setCrops() method
+        // Purpose: store a reference to a crop object
+        // Parameters: a reference to a crop object
+        // Returns: none    
+        public void setCrop(CropData _cropRef)
+        {
+            theCrops = _cropRef;
+        }
+
+
     //constructor
     public Game() {
     }

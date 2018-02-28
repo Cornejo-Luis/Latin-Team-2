@@ -94,7 +94,8 @@ public class CuriousWorkmanship {
          //Main Menu View
          MainMenuView mmv = new MainMenuView();
          mmv.displayMenuView();
-
+         
+         
     }
     
 }

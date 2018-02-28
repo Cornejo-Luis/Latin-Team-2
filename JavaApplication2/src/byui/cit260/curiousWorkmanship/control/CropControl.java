@@ -45,11 +45,11 @@ public class CropControl {
         int acresOwned = cropData.getAcresOwned();
          
         
-        //      if acresToBuy < 0, return -1
+        //  if acresToBuy < 0, return -1
             if(acresToBuy<0)
             return -1;
             
-        //   if acresToBuy > 10 x numberOfPeople, return -1
+        //  if acresToBuy > 10 x numberOfPeople, return -1
             if(acresToBuy > 10 * population)
                 return -1;
         
@@ -57,13 +57,17 @@ public class CropControl {
             if(wheatInStore < landPrice*acresToBuy)
                 return -1;
         
-               
+      
         //  acresOwned = acresOwned + acresToBuy
             acresOwned = acresOwned + acresToBuy;
             
         //  wheatInStore = wheatInStore - (acresToBuy x landPrice)
             wheatInStore = wheatInStore - (acresToBuy * landPrice);
-
+            
+        //save values
+            cropData.setWheatInStore(wheatInStore);
+            cropData.setAcresOwned(acresOwned);
+            
         //  return acresOwned
             return acresOwned;
             
@@ -80,15 +84,14 @@ public class CropControl {
      public static int feedPeople(int wheatToFeed, byui.cit260.curiousWorkmanship.model.CropData cropData)
     {
         int wheatInStore = cropData.getWheatInStore();
-        int wheatForPeople = cropData.getWheatForPeople();
+        
         // if wheatToFeed < 0, return -1
            if (wheatToFeed < 0)
                return -1;
         // if wheatToFeed > wheatInStore, return -1
            if (wheatToFeed > wheatInStore)
                return -1;
-        // wheatForPeople = wheatToFeed
-           wheatForPeople = wheatToFeed;
+        
         // wheatInStore = wheatInStore - wheatToFeed
            wheatInStore = wheatInStore - wheatToFeed;
         //save the values   
@@ -171,9 +174,8 @@ public class CropControl {
         {
             int wheatForPeople = cropData.getWheatForPeople();
             int population = cropData.getPopulation();
-            int peopleFed = cropData.getPeopleFed();
-            numStarved = cropData.getNumStarved();
-            
+            int peopleFed;
+                        
             // peopleFed = wheatForPeople / 20;
                peopleFed = wheatForPeople / 20;
             // numStarved = population - peopleFed;

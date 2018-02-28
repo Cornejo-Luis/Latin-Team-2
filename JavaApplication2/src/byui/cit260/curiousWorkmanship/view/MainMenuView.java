@@ -14,7 +14,7 @@ import byui.cit260.curiousWorkmanship.model.Game;
 import java.util.Scanner;
 import curiousWorkmanship.CuriousWorkmanship;
 import byui.cit260.curiousWorkmanship.model.Player;
-
+import byui.cit260.curiousWorkmanship.model.CropData;
 
 /**
  *
@@ -152,6 +152,23 @@ public class MainMenuView {
         // Display a welcome message
         System.out.println("\nWelcome " + name + " have fun.");
         // Display the Game menu        
+        
+        // Create the CropData object, 
+        // initialize it and save a reference to it in the Game
+        CropData theCrops = new CropData();
+        theCrops.setYear(0);
+        theCrops.setPopulation(100);
+        theCrops.setNewPeople(5);
+        theCrops.setCropYield(3);
+        theCrops.setNumberWhoDied(0);
+        theCrops.setOffering(10);
+        theCrops.setWheatInStore(2700);
+        theCrops.setAcresOwned(1000);
+        theCrops.setAcresPlanted(1000);
+        theCrops.setHarvest(3000);
+        theCrops.setOfferingBushels(300);
+         
+        theGame.setCropData(theCrops);
     }
 
     
