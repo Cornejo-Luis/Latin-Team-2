@@ -56,7 +56,7 @@ public class CropView {
  public static void feedPeopleView()
  {
     
-    // Prompt the user to enter the number of acres to buy
+    // Prompt the user to enter the number of bushels of grain he/she wants to give to the people
      System.out.print("\nHow many bushels of grain do you want to give to the people? "); 
 
     //  Get the user’s input and save it.
