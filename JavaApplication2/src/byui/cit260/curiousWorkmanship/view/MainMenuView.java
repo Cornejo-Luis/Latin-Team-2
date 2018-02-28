@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 
-    // The MainMenuView class - part of the view layer
-    // Object of this class manage the main menu
-    // Author: Luis, Nimrod, Joyce team
-    // Date last modified: February 2018
-    //-------------------------------------------------------------
-package MainMenuView;
+// The MainMenuView class - part of the view layer
+// Object of this class manage the main menu
+// Author: Luis, Nimrod, Joyce team
+// Date last modified: February 2018
+//-------------------------------------------------------------
+package byui.cit260.curiousWorkmanship.view;
 import byui.cit260.curiousWorkmanship.model.Game;
 import java.util.Scanner;
 import curiousWorkmanship.CuriousWorkmanship;
@@ -108,7 +108,7 @@ public class MainMenuView {
             case 1: // create and start a new game
                 startNewGame();
                 break;
-            // if the option is 2, call startExistingGame( )
+            // if the option is 2, call startSavedGame( )
             case 2: // get and start a saved game
                 startSavedGame();
                 break;
@@ -172,7 +172,9 @@ public class MainMenuView {
     // ===================================     
     public void displayHelpMenuView()
     {
-        System.out.println("\nDisplay help menu view option selected.");
+        //Create a new HelpMenuView object.
+        HelpMenuView theHelpMenu = new HelpMenuView();
+        theHelpMenu.displayHelpMenuView();
     }
     
      // The displaySaveGameView method

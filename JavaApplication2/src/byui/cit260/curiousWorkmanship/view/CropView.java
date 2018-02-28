@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MainMenuView;
+package byui.cit260.curiousWorkmanship.view;
 
 import byui.cit260.curiousWorkmanship.model.*;
 import byui.cit260.curiousWorkmanship.control.*;

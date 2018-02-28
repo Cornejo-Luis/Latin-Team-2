@@ -5,7 +5,7 @@
  */
 package curiousWorkmanship;
 
-import MainMenuView.MainMenuView;
+import byui.cit260.curiousWorkmanship.view.MainMenuView;
 import byui.cit260.curiousWorkmanship.control.CropControl;
 import byui.cit260.curiousWorkmanship.model.ListItem;
 import byui.cit260.curiousWorkmanship.model.Player;
