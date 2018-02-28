@@ -161,4 +161,30 @@ public class CropControl {
            
         } while(m == 0);
        }
+       
+        // The calcStarved method
+         // Purpose: To calculate people who starved
+         // Parameters: the number of people who starved
+         // Returns: the number of people who starved
+          
+         public static int calcStarved(int numStarved, byui.cit260.curiousWorkmanship.model.CropData cropData)
+        {
+            int wheatForPeople = cropData.getWheatForPeople();
+            int population = cropData.getPopulation();
+            int peopleFed = cropData.getPeopleFed();
+            numStarved = cropData.getNumStarved();
+            
+            // peopleFed = wheatForPeople / 20;
+               peopleFed = wheatForPeople / 20;
+            // numStarved = population - peopleFed;
+               numStarved = population - peopleFed;
+            // population = population - numStarved;
+               population = population - numStarved;
+            // save the values  
+               cropData.setPopulation(population);
+               cropData.setPeopleFed(peopleFed);
+               cropData.setNumStarved(numStarved);
+            // return numStarved
+               return numStarved;        
+    }
 }

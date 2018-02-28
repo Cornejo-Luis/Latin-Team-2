@@ -359,6 +359,37 @@ public class CropControlTest {
          
     
     }
+
+    /**
+     * Test of calcStarved method, of class CropControl.
+     */
+    @Test
+    public void testCalcStarved() {
+        System.out.println("calcStarved");
+       
+        System.out.println("\tTest case 1");
+        CropData cropyData1 = new CropData();
+        cropyData1.setWheatForPeople(0);
+        cropyData1.setPopulation(100);
+      
+        int expResult = 100;
+        int numStarved = 0;
+        int result = CropControl.calcStarved(numStarved, cropyData1);
+        assertEquals(expResult, result);
+        System.out.println(result);
+        
+        System.out.println("\tTest case 2");
+        CropData cropyData2 = new CropData();
+        cropyData2.setWheatForPeople(90);
+        cropyData2.setPopulation(100);
+      
+        expResult = 96;
+        numStarved = 0;
+        result = CropControl.calcStarved(numStarved, cropyData2);
+        assertEquals(expResult, result);
+        System.out.println(result);
+        
+    }
           
     
 }
