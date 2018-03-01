@@ -50,9 +50,10 @@ public class CropView {
  }
  
   /*------------ The sellLandView method--------------*/
- // Purpose: interface with the user input for buying land
-// Parameters: none
- // Returns: none
+    // Purpose: interface with the user input for buying land
+    // Parameters: none
+    // Returns: none
+    //author: nimrod
  public static void sellLandView()
  {
     // Get the cost of land for this round.
