@@ -16,8 +16,7 @@ public class DisplayList {
     Scanner keyboard = new Scanner(System.in);
     private String theMenu;
     private int max;
-    
-    public ();
+   
     
     
 }
