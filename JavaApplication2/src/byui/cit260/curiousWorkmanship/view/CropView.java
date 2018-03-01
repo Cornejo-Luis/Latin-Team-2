@@ -66,6 +66,24 @@ public class CropView {
     CropControl.feedPeople(wheatForPeople, theCropData);
    
  }
+ 
+ // The plantCropsView method
+// Purpose: interface with the user input for plant crops
+// Parameters: none
+// Returns: none
+ public static void plantCropsView()
+ {
+    
+    // Prompt the user to enter the number of acres to plant
+     System.out.print("\nhow many acres of land do you want to plant? "); 
+
+    //  Get the user’s input and save it.
+    int acresToPlant = keyboard.nextInt();
+
+    // Call the plantcrops( ) method in the control layer
+    CropControl.plantcrops(acresToPlant, theCropData);
+   
+ }
 
 
  // The runCropsView method()
@@ -89,6 +107,9 @@ public static void runCropsView()
     // as they are written
     // call the feedPeopleView( ) method
     feedPeopleView( );
+    
+    // call the plantCropsView( ) method
+    plantCropsView();
  /*
 sellLandView()
 feedPeopleView()
