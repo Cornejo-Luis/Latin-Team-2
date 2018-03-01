@@ -38,7 +38,7 @@ public class GameMenuView {
                 "* CITY OF AARON: GAME MENU        *\n" +
                 "**********************************\n" +
                 " 1 - View the map\n" +
-                " 2 - View/Print a list\n" +
+                " 2 - Display/Print a list\n" +
                 " 3 - Move to a new location\n" +
                 " 4 - Manage the Crops \n" +
                 " 5 - Return to the Main menu\n";     
@@ -137,16 +137,27 @@ public class GameMenuView {
     // Parameters: none
     // Returns: none
     // ===================================     
+    
+    // The viewPrintList method
+    // Purpose: list some storehouse's stuffs
+    // Parameters: none
+    // Returns: none
+    //modified: @Nimrod
     public void viewPrintList()
     {
-        System.out.println("\nDisplay the viewPrintList option selected.");
+      System.out.println("\nDisplay the viewPrintList option selected.");  
+         //Create a new DisplayList object.
+            DisplayList printList = new DisplayList();
+            // Display the List
+            printList.displayPrintDisplayList();
+        
     }
     
     // The moveNewLocation method
     // Purpose: enter the coordinates of the location on the map that they want to move to
     // Parameters: none
     // Returns: none
-    
+   
     public void moveNewLocation()
     {
         //Create a new coordinates.
