@@ -164,7 +164,7 @@ public class MainMenuView {
         theCrops.setPopulation(100);
         theCrops.setNewPeople(5);
         theCrops.setCropYield(3);
-        theCrops.setNumberWhoDied(0);
+        theCrops.setNumStarved(0);
         theCrops.setOffering(10);
         theCrops.setWheatInStore(2700);
         theCrops.setAcresOwned(1000);
