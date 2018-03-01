@@ -114,10 +114,10 @@ public class GameMenuView {
             case 4: // Manage the Crops 
                 manageTheCrops();
                 break;
-            // if the option is 5, return to the game menu view
+            // if the option is 5, return to the Main game menu view
             case 5:
-                GameMenuView gmv = new GameMenuView();
-                gmv.displayMenuView();
+                MainMenuView mmv = new MainMenuView();
+                mmv.displayMenuView();
         }
     } 
     
@@ -216,5 +216,9 @@ public class GameMenuView {
         
         
     } 
+
+    void displayGameMenuView() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
        
 }

@@ -151,9 +151,13 @@ public class MainMenuView {
         theGame.setThePlayer(thePlayer);
         // Display a welcome message
         System.out.println("\nWelcome " + name + " have fun.");
-        // Display the Game menu        
+            
+            //Create a new HelpMenuView object.
+            GameMenuView theGameMenu = new GameMenuView();
+            // Display the Game menu
+            theGameMenu.displayMenuView();
         
-        // Create the CropData object, 
+// Create the CropData object, 
         // initialize it and save a reference to it in the Game
         CropData theCrops = new CropData();
         theCrops.setYear(0);
@@ -203,5 +207,5 @@ public class MainMenuView {
     {
         System.out.println("\nDisplay Save Game View option selected.");
     }
-    
+ 
 }
