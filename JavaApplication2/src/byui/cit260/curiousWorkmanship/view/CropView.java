@@ -62,7 +62,7 @@ public class CropView {
     //  Get the user’s input and save it.
     int wheatForPeople = keyboard.nextInt();
 
-    // Call the buyLand( ) method in the control layer to buy the land
+    // Call the feedPeople( ) method in the control layer
     CropControl.feedPeople(wheatForPeople, theCropData);
    
  }
