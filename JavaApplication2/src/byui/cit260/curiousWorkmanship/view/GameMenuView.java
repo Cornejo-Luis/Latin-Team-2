@@ -16,6 +16,8 @@ import curiousWorkmanship.CuriousWorkmanship;
 import byui.cit260.curiousWorkmanship.model.Player;
 import byui.cit260.curiousWorkmanship.model.Location;
 import byui.cit260.curiousWorkmanship.model.CropData;
+import byui.cit260.curiousWorkmanship.view.CropView;
+import static byui.cit260.curiousWorkmanship.view.CropView.runCropsView;
 
 /**
  *
@@ -187,45 +189,7 @@ public class GameMenuView {
     public void manageTheCrops()
     {
         System.out.println("\nDisplay the manageTheCrops option selected.");
-        CuriousWorkmanship.setYear();
-        
-        
-        //Create a new CropData object.
-        CropData theCropData = new CropData();
-        // Obtain a reference in the CuriousWorkmanship class.
-        CuriousWorkmanship.getYear(theCropData);
-        CuriousWorkmanship.getPopulation(theCropData);
-        CuriousWorkmanship.getAcresOwned(theCropData);
-        CuriousWorkmanship.getCropYield(theCropData);
-        CuriousWorkmanship.getWheatInStore(theCropData);
-        CuriousWorkmanship.getNumberWhoDied(theCropData);
-        CuriousWorkmanship.getNewPeople(theCropData);
-        CuriousWorkmanship.getHarvest(theCropData);
-        CuriousWorkmanship.getHarvestAfterOffering(theCropData);
-        CuriousWorkmanship.getOffering(theCropData);
-        CuriousWorkmanship.getOfferingBushels(theCropData);
-        CuriousWorkmanship.getPeopleFed(theCropData);
-        CuriousWorkmanship.getAcresPlanted(theCropData);
-        CuriousWorkmanship.getNumStarved(theCropData);
-        CuriousWorkmanship.getEatenByRats(theCropData);
-        CuriousWorkmanship.getWheatForPeople(theCropData);
-        
-//        System.out.println("\nDisplay the main circle of the Game.");
-//        System.out.println("\nstarved = 0.");
-//        System.out.println("\nimmigrants = 5.");
-//        System.out.println("\npopulation = 100.");
-//        System.out.println("\nharvest = 3000 # bushels.");
-//        System.out.println("\nbushels_per_acre = 3 # amount harvested.");
-//        System.out.println("\nacres_planted = 1000 # acres planted.");
-//        System.out.println("\nrats_ate = 200 # bushels.");
-//        System.out.println("\nbushels_in_storage = 2800.");
-//        System.out.println("\nacres_owned = 1000.");
-//        System.out.println("\ncost_per_acre = 19 #bushels per acre.");
-//        System.out.println("\nplague_deaths = 0.");
-//        System.out.println("\nterm = 10 #the term of the office.");
-        
-        
-        
+        runCropsView();
     } 
 
     void displayGameMenuView() {
