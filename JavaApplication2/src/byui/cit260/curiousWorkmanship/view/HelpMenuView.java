@@ -22,12 +22,7 @@ public class HelpMenuView {
     private String theHelpMenu;
     private int max;
     
-    // The displayMenuView method
-    // Purpose: displays the menu, gets the user's input, and does the 
-    //               selected action
-    // Parameters: none
-    // Returns: none
-    // =========================================================    
+      
 
     public HelpMenuView() {
         theHelpMenu = "\n" +
@@ -44,7 +39,12 @@ public class HelpMenuView {
         max = 6;
     }
     
-    
+    // The displayHelpMenuView method
+    // Purpose: displays the menu, gets the user's input, and does the 
+    //          selected action
+    // Parameters: none
+    // Returns: none
+    // =========================================================  
     public void displayHelpMenuView()
     {
         int menuOption = 0;
