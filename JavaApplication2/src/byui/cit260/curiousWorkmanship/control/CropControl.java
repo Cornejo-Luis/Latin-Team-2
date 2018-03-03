@@ -74,7 +74,7 @@ public class CropControl {
         // Pre-conditions: acres to buy must be positive
         // and <= ten times the number of people
 
-    public static int buyland(int acresToBuy, int landPrice, byui.cit260.curiousWorkmanship.model.CropData cropData)
+    public static int buyland(int acresToBuy, int landPrice, CropData cropData)
     {
 
         int population = cropData.getPopulation();
@@ -181,26 +181,20 @@ public class CropControl {
 
      }
     
-       public static void setOffering(int percentOffering){
+       public static int setOffering(int percentOffering){
        
-           int m = 0;
-           Scanner reader = new Scanner(System.in);
-        //The program ask the user to input a percentage of harvest for offering
-        
-        do {
-            System.out.println("Please enter the percentage you want to pay in tithes: ");  
-           int n = reader.nextInt();
           //condition 
           //If the number entered is less than 0, the program goes to step 1 
           //If the number entered is greater than 100, the program goes to step 1.
-           if(n>=0 && n<=100)
-           {     m=1;
+           if(percentOffering>=0 && percentOffering<=100)
+           {     
                  //The numbered entered by the user is saved.
-                 percentOffering = n;
+                 return percentOffering; 
            }
-           
-        } while(m == 0);
-       }
+           else
+               return -1;
+        } 
+       
        
         // The calcStarved method
          // Purpose: To calculate people who starved
