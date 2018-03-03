@@ -188,8 +188,8 @@ public class GameMenuView {
     // ===================================     
     public void manageTheCrops()
     {
-        System.out.println("\nDisplay the manageTheCrops option selected.");
-        CropView.runCropsView();
+        CropView theCropView = new CropView();
+        theCropView.displayCropView();
     } 
 
     void displayGameMenuView() {

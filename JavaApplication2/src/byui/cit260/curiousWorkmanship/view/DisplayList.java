@@ -34,9 +34,9 @@ public class DisplayList {
            " 2 – Tools in the storehouse\n" +
            " 3 - Provisions in the storehouse\n" +
            " 4 – Authors of this game\n" +
-           " 5 - Back to the Main Menu.\n"; 
+           " 5 - Return to the Game Menu.\n"; 
 
-        max = 4;
+        max = 5;
     }
     
     
@@ -105,10 +105,10 @@ public class DisplayList {
             case 4: 
                 viewAuthors();
                 break;
-            // if the option is 5, go back to the Main Menu.
+            // if the option is 5, go back to the Game Menu.
             case  5: 
-                MainMenuView mmv = new MainMenuView();
-                mmv.displayMenuView();
+                GameMenuView gmv = new GameMenuView();
+                gmv.displayMenuView();
         }
     }
     
