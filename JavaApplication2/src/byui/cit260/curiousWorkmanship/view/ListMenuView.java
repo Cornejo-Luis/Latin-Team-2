@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author nimrod
  */
-public class DisplayList {
+public class ListMenuView {
     
     
     Scanner keyboard = new Scanner(System.in);
@@ -25,7 +25,7 @@ public class DisplayList {
     // Returns: none
     // =========================================================    
 
-    public DisplayList() {
+    public ListMenuView() {
         TheList = "\n" +
            "**********************************\n" +
            "* CITY OF AARON: Print List  *\n" +
@@ -40,7 +40,7 @@ public class DisplayList {
     }
     
     
-    public void displayPrintDisplayList()
+    public void displayMenuView()
     {
         int menuOption = 0;
         do

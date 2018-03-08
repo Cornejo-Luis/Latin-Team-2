@@ -45,7 +45,7 @@ public class HelpMenuView {
     // Parameters: none
     // Returns: none
     // =========================================================  
-    public void displayHelpMenuView()
+    public void displayMenuView()
     {
         int menuOption = 0;
         do
@@ -172,4 +172,7 @@ public class HelpMenuView {
     {
         System.out.println("\nDisplay the viewHowList option selected.");
     } 
+
+
+
 }

@@ -148,10 +148,10 @@ public class GameMenuView {
     public void viewPrintList()
     {
       System.out.println("\nDisplay the viewPrintList option selected.");  
-         //Create a new DisplayList object.
-            DisplayList printList = new DisplayList();
+         //Create a new ListMenuView object.
+            ListMenuView printList = new ListMenuView();
             // Display the List
-            printList.displayPrintDisplayList();
+            printList.displayMenuView();
         
     }
     
@@ -191,9 +191,5 @@ public class GameMenuView {
         CropView theCropView = new CropView();
         theCropView.displayCropView();
     } 
-
-    void displayGameMenuView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
        
 }
