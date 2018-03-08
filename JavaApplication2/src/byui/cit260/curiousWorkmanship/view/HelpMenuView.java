@@ -19,13 +19,13 @@ import curiousWorkmanship.CuriousWorkmanship;
  */
 public class HelpMenuView {
     Scanner keyboard = new Scanner(System.in);
-    private String theHelpMenu;
+    private String theMenu;
     private int max;
     
       
 
     public HelpMenuView() {
-        theHelpMenu = "\n" +
+        theMenu = "\n" +
            "**********************************\n" +
            "* CITY OF AARON: HELP GAME MENU  *\n" +
            "**********************************\n" +
@@ -51,7 +51,7 @@ public class HelpMenuView {
         do
         {
          // Display the menu
-        System.out.println(theHelpMenu);
+        System.out.println(theMenu);
          // Prompt the user and get the user’s input
         menuOption = getMenuOption();
          // Perform the desired action

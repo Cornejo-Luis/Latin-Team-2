@@ -15,7 +15,7 @@ public class ListMenuView {
     
     
     Scanner keyboard = new Scanner(System.in);
-    private String TheList;
+    private String TheMenu;
     private int max;
     
     // The  method
@@ -26,7 +26,7 @@ public class ListMenuView {
     // =========================================================    
 
     public ListMenuView() {
-        TheList = "\n" +
+        TheMenu = "\n" +
            "**********************************\n" +
            "* CITY OF AARON: Print List  *\n" +
            "**********************************\n" +
@@ -46,7 +46,7 @@ public class ListMenuView {
         do
         {
          // Display the list
-        System.out.println(TheList);
+        System.out.println(TheMenu);
          // Prompt the user and get the user’s input
         menuOption = getMenuOption();
          // Perform the desired action

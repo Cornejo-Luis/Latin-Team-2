@@ -10,7 +10,7 @@ package byui.cit260.curiousWorkmanship.view;
  * @author joyce
  */
 public interface ViewInterface {
-    public void displayMenu();
+    public void displayMenuView();
     public int getMenuOption();
     public void doAction(int option);    
 }

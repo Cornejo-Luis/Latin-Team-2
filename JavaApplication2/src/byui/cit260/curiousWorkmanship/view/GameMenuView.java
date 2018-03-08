@@ -25,7 +25,7 @@ import static byui.cit260.curiousWorkmanship.view.CropView.runCropsView;
  */
 public class GameMenuView {
     Scanner keyboard = new Scanner(System.in);
-    private String theGameMenu;
+    private String theMenu;
     private int max;
     
     // The GameMenuView method
@@ -35,7 +35,7 @@ public class GameMenuView {
     // ========================================================= 
     
     public GameMenuView() {
-        theGameMenu = "\n" +
+        theMenu = "\n" +
                 "**********************************\n" +
                 "* CITY OF AARON: GAME MENU        *\n" +
                 "**********************************\n" +
@@ -53,7 +53,7 @@ public class GameMenuView {
         do
         {
              // Display the menu
-                System.out.println(theGameMenu);
+                System.out.println(theMenu);
             
              // Prompt the user and get the user’s input
                 menuOption = getMenuOption();
