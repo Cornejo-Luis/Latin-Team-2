@@ -18,6 +18,7 @@ public class CropControl {
     // constants
     private static final int LAND_BASE = 17;
     private static final int LAND_RANGE = 10;
+    private static final int PEOPLE_PER_ACRE = 10;
     
     //random number generator
     private static Random random = new Random();
@@ -59,7 +60,7 @@ public class CropControl {
 
         //wheatInStore = wheatInStore + acresToSell * landPrice
                 int wheat = cropData.getWheatInStore();
-                wheat-= (acresToSell * landPrice);
+                wheat+= (acresToSell * landPrice);
                 cropData.setWheatInStore(wheat);
 
         //return acresOwned
@@ -76,25 +77,28 @@ public class CropControl {
 
     public static int buyland(int acresToBuy, int landPrice, CropData cropData)
     {
+        int population = cropData.getPopulation();
+        int wheatInStore = cropData.getWheatInStore();
+        int acresOwned = cropData.getAcresOwned();
+        /*
         System.out.println(landPrice);
         int population = 100;
         int wheatInStore = 1000;
         int acresOwned = 20;
-         
+         */
         
         //  if acresToBuy < 0, return -1
             if(acresToBuy<0)
                 return -1;
             
         //  if acresToBuy > 10 x numberOfPeople, return -1
-            if(acresToBuy > 10 * population)
+            if(acresToBuy > PEOPLE_PER_ACRE * population)
                 return -1;
         
         //  if wheatInStore < landPrice x acresToBuy, return -1
             if(wheatInStore < landPrice*acresToBuy)
                 return -1;
         
-      /*
         //  acresOwned = acresOwned + acresToBuy
             acresOwned = acresOwned + acresToBuy;
             
@@ -104,11 +108,9 @@ public class CropControl {
         //save values
             cropData.setWheatInStore(wheatInStore);
             cropData.setAcresOwned(acresOwned);
-        */    
-        //  return acresOwned
-            return acresOwned;
             
-        
+        //  return acresOwned
+            return acresOwned;        
     }
      
     // The feedPeople method
@@ -163,7 +165,7 @@ public class CropControl {
             return -1;
         
         //if acresToPlant > population * 10 return -1
-        if (acresToPlant>population * 10)
+        if (acresToPlant>population * PEOPLE_PER_ACRE)
             return -1;
                     
         //bushelsToPlant = acresToPlant / 2;
