@@ -140,6 +140,7 @@ private int max;
  // Returns: none
  public static void buyLandView()
  {
+     int landbuy;
     // Get the cost of land for this round.
     int price = CropControl.calcLandCost();
 
@@ -152,8 +153,11 @@ private int max;
     toBuy = keyboard.nextInt();
 
     // Call the buyLand( ) method in the control layer to buy the land
-    CropControl.buyland(toBuy, price, theCropData);
-   
+    landbuy=CropControl.buyland(toBuy, price, theCropData);
+   if(landbuy==-1)
+         System.out.println("you can't buy");
+   else 
+         System.out.println("you bought " + landbuy);
  }
  
   /*------------ The sellLandView method--------------*/

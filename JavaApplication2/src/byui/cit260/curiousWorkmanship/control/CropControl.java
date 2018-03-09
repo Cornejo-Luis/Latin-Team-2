@@ -76,15 +76,15 @@ public class CropControl {
 
     public static int buyland(int acresToBuy, int landPrice, CropData cropData)
     {
-
-        int population = cropData.getPopulation();
-        int wheatInStore = cropData.getWheatInStore();
-        int acresOwned = cropData.getAcresOwned();
+        System.out.println(landPrice);
+        int population = 100;
+        int wheatInStore = 1000;
+        int acresOwned = 20;
          
         
         //  if acresToBuy < 0, return -1
             if(acresToBuy<0)
-            return -1;
+                return -1;
             
         //  if acresToBuy > 10 x numberOfPeople, return -1
             if(acresToBuy > 10 * population)
@@ -94,7 +94,7 @@ public class CropControl {
             if(wheatInStore < landPrice*acresToBuy)
                 return -1;
         
-      
+      /*
         //  acresOwned = acresOwned + acresToBuy
             acresOwned = acresOwned + acresToBuy;
             
@@ -104,7 +104,7 @@ public class CropControl {
         //save values
             cropData.setWheatInStore(wheatInStore);
             cropData.setAcresOwned(acresOwned);
-            
+        */    
         //  return acresOwned
             return acresOwned;
             
