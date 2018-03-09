@@ -11,11 +11,11 @@ import java.util.Scanner;
  *
  * @author nimrod
  */
-public class DisplayList {
+public class ListMenuView {
     
     
     Scanner keyboard = new Scanner(System.in);
-    private String TheList;
+    private String TheMenu;
     private int max;
     
     // The  method
@@ -25,8 +25,8 @@ public class DisplayList {
     // Returns: none
     // =========================================================    
 
-    public DisplayList() {
-        TheList = "\n" +
+    public ListMenuView() {
+        TheMenu = "\n" +
            "**********************************\n" +
            "* CITY OF AARON: Print List  *\n" +
            "**********************************\n" +
@@ -40,13 +40,13 @@ public class DisplayList {
     }
     
     
-    public void displayPrintDisplayList()
+    public void displayMenuView()
     {
         int menuOption = 0;
         do
         {
          // Display the list
-        System.out.println(TheList);
+        System.out.println(TheMenu);
          // Prompt the user and get the user’s input
         menuOption = getMenuOption();
          // Perform the desired action

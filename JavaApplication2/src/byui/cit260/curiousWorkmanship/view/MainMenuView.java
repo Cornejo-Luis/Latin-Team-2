@@ -157,7 +157,7 @@ public class MainMenuView {
             // Display the Game menu
             theGameMenu.displayMenuView();
         
-// Create the CropData object, 
+        // Create the CropData object, 
         // initialize it and save a reference to it in the Game
         CropData theCrops = new CropData();
         theCrops.setYear(0);
@@ -185,7 +185,7 @@ public class MainMenuView {
     {
         System.out.println("\nStart saved game option selected.");
     }
-    
+     
     // The displayHelpMenuView method
     // Purpose: display Help Menu View
     // Parameters: none
@@ -195,7 +195,7 @@ public class MainMenuView {
     {
         //Create a new HelpMenuView object.
         HelpMenuView theHelpMenu = new HelpMenuView();
-        theHelpMenu.displayHelpMenuView();
+        theHelpMenu.displayMenuView();
     }
     
      // The displaySaveGameView method
