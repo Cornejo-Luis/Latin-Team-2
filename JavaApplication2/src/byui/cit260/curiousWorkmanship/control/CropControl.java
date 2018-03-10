@@ -19,6 +19,10 @@ public class CropControl {
     private static final int LAND_BASE = 17;
     private static final int LAND_RANGE = 10;
     private static final int PEOPLE_PER_ACRE = 10;
+    private static final int BUSHELS_PER_PERSON = 20;
+    private static final double TO_PERCENT = 100.0;
+    private static final int GROWTH_RANGE = 5;
+    private static final int GROWTH_BASE = 1;
     
     //random number generator
     private static Random random = new Random();
@@ -203,14 +207,15 @@ public class CropControl {
          // Parameters: the number of people who starved
          // Returns: the number of people who starved
           
-         public static int calcStarved(int numStarved, byui.cit260.curiousWorkmanship.model.CropData cropData)
+         public static int calcStarved(int wheatForPeople, byui.cit260.curiousWorkmanship.model.CropData cropData)
         {
-            int wheatForPeople = cropData.getWheatForPeople();
+            wheatForPeople = cropData.getWheatForPeople();
             int population = cropData.getPopulation();
             int peopleFed;
+            int numStarved;
                         
             // peopleFed = wheatForPeople / 20;
-               peopleFed = wheatForPeople / 20;
+               peopleFed = wheatForPeople / BUSHELS_PER_PERSON;
             // numStarved = population - peopleFed;
                numStarved = population - peopleFed;
             // population = population - numStarved;
@@ -221,5 +226,26 @@ public class CropControl {
                cropData.setNumStarved(numStarved);
             // return numStarved
                return numStarved;        
-    }
+        }
+        
+          public static int growPopulation( byui.cit260.curiousWorkmanship.model.CropData cropData)
+        {
+            int population = cropData.getPopulation();
+            
+            int percentage = (int) (population/TO_PERCENT);
+            
+            //calculate the number of people who moved into the city
+            int newPeople = random.nextInt(GROWTH_RANGE * percentage)+ (GROWTH_BASE * percentage);
+            
+            //add the number of people who moved into the city to the current population
+            population += newPeople;
+            
+            //save the new population
+            cropData.setPopulation(population);
+            
+            //return how many people moved into the city
+            return newPeople;
+                    
+        }
+        
 }
