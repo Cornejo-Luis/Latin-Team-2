@@ -20,7 +20,7 @@ public class Game implements Serializable{
     private ArrayList<ListItem> provitions;
     
     private CropData theCrops = null;
-
+    
         // the getCrops() method
         // Purpose: get a reference to the crop object
         // Parameters: none

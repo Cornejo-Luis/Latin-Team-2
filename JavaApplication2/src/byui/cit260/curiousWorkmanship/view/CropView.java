@@ -15,7 +15,7 @@ import curiousWorkmanship.CuriousWorkmanship;
  * @author nimrod
  */
 public class CropView {
-    
+     
     
   // Create a Scanner object
  private static Scanner keyboard = new Scanner(System.in);   
