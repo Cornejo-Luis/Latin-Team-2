@@ -71,8 +71,7 @@ public class HelpMenuView extends MenuView{
                 break;
             // if the option is 6, go back to the Main Menu.
             case  6: 
-                MainMenuView mmv = new MainMenuView();
-                mmv.displayMenuView();
+                return;
         }
     }
     
