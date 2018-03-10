@@ -20,7 +20,7 @@ public class CropControl {
     private static final int LAND_RANGE = 10;
     private static final int PEOPLE_PER_ACRE = 10;
     private static final int BUSHELS_PER_PERSON = 20;
-    private static final double TO_PERCENT = 100.0;
+    private static final int TO_PERCENT = 100;
     private static final int GROWTH_RANGE = 5;
     private static final int GROWTH_BASE = 1;
     
@@ -228,14 +228,16 @@ public class CropControl {
                return numStarved;        
         }
         
-          public static int growPopulation( byui.cit260.curiousWorkmanship.model.CropData cropData)
+         public static int growPopulation( byui.cit260.curiousWorkmanship.model.CropData cropData)
         {
             int population = cropData.getPopulation();
-            
-            int percentage = (int) (population/TO_PERCENT);
+                       
+            //calculate the percentage of people who moved into the city
+            int percentOfGrowth = random.nextInt(GROWTH_RANGE)+ (GROWTH_BASE);
             
             //calculate the number of people who moved into the city
-            int newPeople = random.nextInt(GROWTH_RANGE * percentage)+ (GROWTH_BASE * percentage);
+            int newPeople;
+            newPeople = population * percentOfGrowth / TO_PERCENT ;
             
             //add the number of people who moved into the city to the current population
             population += newPeople;
@@ -244,8 +246,7 @@ public class CropControl {
             cropData.setPopulation(population);
             
             //return how many people moved into the city
-            return newPeople;
-                    
+            return newPeople;          
         }
         
 }
