@@ -60,8 +60,7 @@ public class ListMenuView extends MenuView{
                 break;
             // if the option is 5, go back to the Game Menu.
             case  5: 
-                GameMenuView gmv = new GameMenuView();
-                gmv.displayMenuView();
+                return;
         }
     }
     
