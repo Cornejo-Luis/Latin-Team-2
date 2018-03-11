@@ -99,10 +99,6 @@ public class MainMenuView extends MenuView{
         // Display a welcome message
         System.out.println("\nWelcome " + name + " have fun.");
             
-            //Create a new HelpMenuView object.
-            GameMenuView theGameMenu = new GameMenuView();
-            // Display the Game menu
-            theGameMenu.displayMenuView();
         
         // Create the CropData object, 
         // initialize it and save a reference to it in the Game
@@ -120,6 +116,11 @@ public class MainMenuView extends MenuView{
         theCrops.setOfferingBushels(300);
          
         theGame.setCropData(theCrops);
+        
+        //Create a new HelpMenuView object.
+        GameMenuView theGameMenu = new GameMenuView();
+        // Display the Game menu
+        theGameMenu.displayMenuView();
     }
 
     
