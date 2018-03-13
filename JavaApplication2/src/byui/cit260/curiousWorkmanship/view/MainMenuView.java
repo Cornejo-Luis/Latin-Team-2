@@ -10,6 +10,7 @@
 // Date last modified: February 2018
 //-------------------------------------------------------------
 package byui.cit260.curiousWorkmanship.view;
+import byui.cit260.curiousWorkmanship.control.GameControl;
 import byui.cit260.curiousWorkmanship.model.Game;
 import java.util.Scanner;
 import curiousWorkmanship.CuriousWorkmanship;
@@ -80,47 +81,37 @@ public class MainMenuView extends MenuView{
     // ===================================      
     public void startNewGame()
     {
-        //Create a new Game object.
-        Game theGame = new Game();
-        // Save a reference to it in the CuriousWorkmanship class.
-        CuriousWorkmanship.setTheGame(theGame);
-        // Display the Banner Page.
-        System.out.println("\nWelcome to the city of Aaron.");
-        // Create a new Player object
-        Player thePlayer = new Player();
-        // Prompt for and get the user’s name.
-        String name;
-        System.out.println("\nPlease type in your first name: ");
-        name = keyboard.next();
-        // Save the user’s name in the Player object
-        thePlayer.setName(name);
-        // Save a reference to the player object in the Game object
-        theGame.setThePlayer(thePlayer);
-        // Display a welcome message
-        System.out.println("\nWelcome " + name + " have fun.");
-            
-        
-        // Create the CropData object, 
-        // initialize it and save a reference to it in the Game
-        CropData theCrops = new CropData();
-        theCrops.setYear(0);
-        theCrops.setPopulation(100);
-        theCrops.setNewPeople(5);
-        theCrops.setCropYield(3);
-        theCrops.setNumStarved(0);
-        theCrops.setOffering(10);
-        theCrops.setWheatInStore(2700);
-        theCrops.setAcresOwned(1000);
-        theCrops.setAcresPlanted(1000);
-        theCrops.setHarvest(3000);
-        theCrops.setOfferingBushels(300);
-         
-        theGame.setCropData(theCrops);
-        
-        //Create a new HelpMenuView object.
-        GameMenuView theGameMenu = new GameMenuView();
-        // Display the Game menu
-        theGameMenu.displayMenuView();
+        // Show banner page
+        System.out.println(
+            "\n********************************************************\n" +
+            "* Welcome to the City of Aaron. You have been summoned *\n" +
+            "* by the High Priest to assume your role as ruler of   *\n" +
+            "* the city. Your responsibility is to buy land, sell   *\n" +
+            "* land, determine how much wheat to plant each year,   *\n" +
+            "* and how much to set aside to feed the people. You     *\n" +
+            "* will also be required to pay an annual tithe on the  *\n" +
+            "* that is harvested. If you fail to provide      *\n" +
+            "* enough wheat for the people to eat, people will die  *\n" +
+            "* and your workforce will be diminished. Plan very     *\n" +
+            "* carefully or you may find yourself in trouble with   *\n" +
+            "* the people. And oh, watch out for plagues and rats!  *\n" +
+            "********************************************************\n");  
+
+            // Get player name, create player object, and save it in the Game
+            String name;
+            System.out.println("\nPlease type in your first name: ");
+            name = keyboard.next();
+
+            // welcome message
+            System.out.println("\nWelcome " + name + ", have fun playing.");
+
+            // call the createNewGame( ) method. Pass the name as a parameter
+             GameControl.createNewGame(name);
+
+            //show the game menu
+            GameMenuView gmv = new GameMenuView();
+            gmv.displayMenuView();
+
     }
 
     

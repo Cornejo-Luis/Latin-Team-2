@@ -28,7 +28,7 @@ public class ListMenuView extends MenuView{
            " 1 - Animals in the storehouse\n" +
            " 2 – Tools in the storehouse\n" +
            " 3 - Provisions in the storehouse\n" +
-           " 4 – Authors of this game\n" +
+           " 4 – View the development team\n" +
            " 5 - Return to the Game Menu.\n", 
          5);
     }
