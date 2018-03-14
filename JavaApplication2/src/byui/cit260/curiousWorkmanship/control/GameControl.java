@@ -112,13 +112,13 @@ public class GameControl {
 
         // set this location object in each cell of the array in column 4      
         for(int i = 0; i < MAX_ROW; i++)
-         {
+        {
                 theMap.setLocation(i, 4, loc);
-     }
+        }
 
         // define the string for a farm land location
         String farmland = "\nYou are on the fertile banks of the River." +
-        "\nIn the springthis low farmland floods and is covered with rich" +
+        "\nIn the spring this low farmland floods and is covered with rich" +
         "\nnew soil. Wheat is planted as far as you can see."; 
 
         // set a farmland location with a hint
@@ -126,6 +126,17 @@ public class GameControl {
         loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
         loc.setSymbol("!!!");
         theMap.setLocation(0, 2, loc);
+        
+        
+        // define the string for the Ruler's Court
+        String court = "\nYou are on the Ruler's Court." +
+        "\nYou can come here whenever you feel the town is in danger."; 
+
+        // set a court location with a hint
+        loc = new Location();
+        loc.setDescription(court + "\nOne peson needs at least twenty bushels of wheat to live.");
+        loc.setSymbol("|VV|");
+        theMap.setLocation(3, 1, loc);
 
         /*
         create!! slide number 50
