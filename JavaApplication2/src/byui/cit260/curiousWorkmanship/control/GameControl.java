@@ -136,8 +136,32 @@ public class GameControl {
         loc = new Location();
         loc.setDescription(court + "\nOne peson needs at least twenty bushels of wheat to live.");
         loc.setSymbol("|VV|");
-        theMap.setLocation(3, 1, loc);
+        theMap.setLocation(4, 2, loc);
+        
+        // define the string for the Ruler's Court
+        String granary = "\nYou are on The City’s Granary and Storehouse." +
+        "\nThis is all you have in store. Be wise when spending it."; 
 
+        // set a court location with a hint
+        loc = new Location();
+        loc.setDescription(granary + "\nOne peson can take care of ten acres.");
+        loc.setSymbol(".-.");
+        theMap.setLocation(0, 3, loc);
+        
+        // define the string for the Ruler's Court
+        String wheatField = "\nYou are standing in one of the city’s wheat fields." +
+        "\nThere is nothing but wheat as far as the eye can see." +
+        "\nWe hope to have a bountiful harvest this year."; 
+
+        // set a court location with a hint
+        loc = new Location();
+        loc.setDescription(wheatField);
+        loc.setSymbol("vvv");
+        for(int i = 1; i < MAX_ROW; i++)
+        {
+           theMap.setLocation(i, 3, loc);
+        }
+        
         /*
         create!! slide number 50
         */
