@@ -115,7 +115,47 @@ public class GameControl {
         {
                 theMap.setLocation(i, 4, loc);
         }
+        
+        /*--------------------------*/
+        
+        // define the string for the Desert location
+        String desert = "\nYou are on the Desert. The desert serve us a" +
+                        "\nnatural protecction from beasts and the Lamanites ";
 
+        // create a new Location object
+        loc = new Location();
+
+        // use setters in the Location class to set the description and symbol
+        loc.setDescription(desert);
+        loc.setSymbol("---");  
+
+        // set this location       
+        for(int i = 0; i < 2; i++)
+        {
+                theMap.setLocation(i, 0, loc);
+        }
+        /*--------------------------*/
+
+        
+        // define the string for the Borders of the Lamanites location
+        String border = "\nYou are on the borders near to the Lamanites. If you" +
+                        "\nwant to keep yourselve save, you must return from"+ 
+                        "\nwhere you came.  ";
+
+        // create a new Location object
+        loc = new Location();
+
+        // use setters in the Location class to set the description and symbol
+        loc.setDescription(border);
+        loc.setSymbol("|=|");  
+
+        // set this location       
+        for(int i = 2; i < MAX_ROW; i++)
+        {
+                theMap.setLocation(i, 0, loc);
+        }
+        /*--------------------------*/
+        
         // define the string for a farm land location
         String farmland = "\nYou are on the fertile banks of the River." +
         "\nIn the spring this low farmland floods and is covered with rich" +
