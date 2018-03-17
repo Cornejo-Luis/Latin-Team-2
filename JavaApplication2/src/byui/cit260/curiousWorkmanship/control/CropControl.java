@@ -248,5 +248,36 @@ public class CropControl {
             //return how many people moved into the city
             return newPeople;          
         }
+         
+          
+         // The harvestCrops method
+         // Purpose: To calulate the number of bushels of wheat harvested
+         // Parameters: Acres planted, Offerings, Crop Yield
+         // Returns: the number of bushels of wheat harvested.
+         public static int harvestCrops(int cropYield, byui.cit260.curiousWorkmanship.model.CropData cropData )
+         {
+             int acresPlanted = cropData.getAcresPlanted();
+             int offering = cropData.getOffering();
+             int bushelsHarvested;
+             
+             if(offering > 12)
+             {
+                 //A random value between 2 and 5 bushels per acre
+                 cropYield = random.nextInt(5)+ (2);
+             }
+             else if(offering<8)
+             {
+                 //A random value between 1 and 3 bushels per acre
+                 cropYield = random.nextInt(3)+ (1);
+             }
+             else
+             {  
+                 //A random value between 2 and 4 bushels per acre
+                 cropYield = random.nextInt(4)+ (2);
+             }
+             bushelsHarvested = cropYield*acresPlanted;
+             
+            return bushelsHarvested;
+         }
         
 }

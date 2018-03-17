@@ -202,6 +202,47 @@ public class GameControl {
            theMap.setLocation(i, 3, loc);
         }
         
+        
+        /*--------------------------*/
+       
+        // define the string for undevelop Land location
+        String undevelopLand = "\nFifteen years ago, City of Aaron embarked on a grand project to cultivate farmland in" +
+                        "\nthe desert and create new towns. But massive projects like undevelopeland have "+ 
+                        "\nlanguished due to mismanagement and corruption.  ";
+
+        // create a new Location object
+        loc = new Location();
+
+        // use setters in the Location class to set the description and symbol
+        loc.setDescription(undevelopLand);
+        loc.setSymbol("??????");  
+
+        // set this location       
+        for(int i = 0; i < MAX_COL; i++)
+        {
+                theMap.setLocation(i, 1, loc);
+        }
+        /*--------------------------*/
+        
+        // define the string for undevelop Land location
+        String village = "\nThe village is one of the most extreme examples" +
+                        "\nof City of Aaron plan to green its deserts,"+ 
+                        "\nor take once-uninhabitable earth and convert it to farmland. ";
+
+        // create a new Location object
+        loc = new Location();
+
+        // use setters in the Location class to set the description and symbol
+        loc.setDescription(village);
+        loc.setSymbol("_¬_¬_");  
+
+        // set this location       
+        for(int i = 1; i < 4; i++)
+        {
+                theMap.setLocation(i, 2, loc);
+        }
+        
+        /*--------------------------*/
         /*
         create!! slide number 50
         */
