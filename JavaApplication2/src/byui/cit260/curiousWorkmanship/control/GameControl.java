@@ -30,7 +30,9 @@ public class GameControl {
         thePlayer.setName(theName);
         theGame.setThePlayer(thePlayer); 
     
-        // create the CropData object
+        // call the methods
+        createCropDataObject( );
+        
     }  
     
     public static void createCropDataObject( ) {
@@ -253,13 +255,13 @@ public class GameControl {
 
     }
     
-    public static int saveGame (Game theGame, String theName ) {
-        System.out.println("\ncreateAnimalList method will be created here");
-        return 0;
+    public static void saveGame (Game theGame, String theName ) {
+        System.out.println("\nsaveGame method will be created here");
+        
     }
     
-    public static int getSavedGame (String theName ) {
+    public static void getSavedGame (String theName ) {
         System.out.println("\ngetSavedGame method will be created here");
-        return 0;
+        
     }
 }
