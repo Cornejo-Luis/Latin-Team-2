@@ -85,7 +85,7 @@ public class GameControl {
         provisions.add(new ListItem("seeds", 3));
 
        
-        theGame.setProvitions(provisions);
+        theGame.setProvisions(provisions);
     }
     
     
