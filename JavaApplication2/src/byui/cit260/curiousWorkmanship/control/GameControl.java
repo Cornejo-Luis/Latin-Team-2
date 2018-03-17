@@ -218,7 +218,7 @@ public class GameControl {
         loc.setSymbol("??????");  
 
         // set this location       
-        for(int i = 0; i < MAX_COL; i++)
+        for(int i = 0; i < MAX_ROW; i++)
         {
                 theMap.setLocation(i, 1, loc);
         }
