@@ -15,12 +15,19 @@ public class Map {
      private int colCount;                // stores the number of columns
      private Location[] [] locations;       // a reference to a 2-dimensional array
                                                            // of Location objects
-     
         // default Map constructor
         // Purpose: Set data members to default values
         // Parameters: none
         // Returns: none
+        public Map() {};
+
+        // parameterized Map constructor
+        // Purpose: Sets row and column values
+        //      and creates an array of Location objects
+        // Parameters: row count and column count
+        // Returns: none
         public Map(int _rows, int _cols)
+
         {
             rowCount = _rows;
             colCount = _cols;
@@ -56,6 +63,5 @@ public class Map {
             locations[row][col] = _location;
             
         } 
-
      
 }
