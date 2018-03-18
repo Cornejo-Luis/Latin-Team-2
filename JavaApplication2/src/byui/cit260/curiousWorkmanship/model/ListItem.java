@@ -16,8 +16,10 @@ public class ListItem implements Serializable{
     public ListItem() {
     }
 
-    public ListItem(String cows, int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //constructor method
+    public ListItem(String _name, int _quantity) {
+        name = _name;
+        number = _quantity;  
     }
   
     public String getName() {
