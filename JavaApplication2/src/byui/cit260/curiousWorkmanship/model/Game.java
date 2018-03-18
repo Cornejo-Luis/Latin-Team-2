@@ -12,10 +12,10 @@ import java.util.ArrayList;
  */
 public class Game implements Serializable{
     //class instance variables
-    private Map theMap;
+    public  Map theMap;
     private Player thePlayer;
     private CropData cropData;
-    private ArrayList<ListItem> animals;
+    public static ArrayList<ListItem> animals;
     private ArrayList<ListItem> tools;
     private ArrayList<ListItem> provisions;
     
