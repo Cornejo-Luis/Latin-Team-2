@@ -32,6 +32,11 @@ public class GameControl {
     
         // call the methods
         createCropDataObject( );
+        createCropDataObject( );
+        createAnimalList( );
+        createToolList( );
+        createProvisionList( );
+        createMap( );
         
     }  
     
@@ -78,7 +83,7 @@ public class GameControl {
         theGame.setTools(tools);
     }
     
-    public static void createProvisionsList ( ) {
+    public static void createProvisionList ( ) {
         ArrayList<ListItem> provisions = new ArrayList<>();
         
         provisions.add(new ListItem("wheat", 2));
