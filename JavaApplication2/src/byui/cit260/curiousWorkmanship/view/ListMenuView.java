@@ -99,7 +99,9 @@ public class ListMenuView extends MenuView{
     // ===================================     
     public void viewProvisions()
     {
-        System.out.println("\nDisplay the viewHowMmap option selected.");
+        Game theGame = new Game();
+        ArrayList<ListItem> provisions = theGame.getProvisions();
+        System.out.println(provisions);
     }
     
     // The viewAuthors method
