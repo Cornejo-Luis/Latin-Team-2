@@ -87,7 +87,9 @@ public class ListMenuView extends MenuView{
     // ===================================     
     public void viewTools()
     {
-        System.out.println("\nDisplay the viewTools option selected.");
+        Game theGame = new Game();
+        ArrayList<ListItem> tools = theGame.getTools();
+        System.out.println(tools);
     }
     
     // The viewProvisions method
