@@ -5,6 +5,10 @@
  */
 package byui.cit260.curiousWorkmanship.view;
 
+import byui.cit260.curiousWorkmanship.control.GameControl;
+import byui.cit260.curiousWorkmanship.model.Game;
+import byui.cit260.curiousWorkmanship.model.ListItem;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -71,7 +75,9 @@ public class ListMenuView extends MenuView{
     // ===================================     
     public void viewAnimals()
     {
-        System.out.println("\nDisplay the viewAnimals option selected.");
+        Game theGame = new Game();
+        ArrayList<ListItem> animals = theGame.getAnimals();
+        System.out.println(animals);
     }
     
     // The viewTools method
