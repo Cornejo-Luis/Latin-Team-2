@@ -16,8 +16,8 @@ public class Game implements Serializable{
     private Player thePlayer;
     private CropData cropData;
     public static ArrayList<ListItem> animals;
-    private ArrayList<ListItem> tools;
-    private ArrayList<ListItem> provisions;
+    public static ArrayList<ListItem> tools;
+    public static ArrayList<ListItem> provisions;
     
     private CropData theCrops = null;
     

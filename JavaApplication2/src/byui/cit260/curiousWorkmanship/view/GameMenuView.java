@@ -15,9 +15,12 @@ import java.util.Scanner;
 import curiousWorkmanship.CuriousWorkmanship;
 import byui.cit260.curiousWorkmanship.model.Player;
 import byui.cit260.curiousWorkmanship.model.Location;
+import byui.cit260.curiousWorkmanship.model.Map;
 import byui.cit260.curiousWorkmanship.model.CropData;
 import byui.cit260.curiousWorkmanship.view.CropView;
 import static byui.cit260.curiousWorkmanship.view.CropView.runCropsView;
+import byui.cit260.curiousWorkmanship.control.GameControl;
+import byui.cit260.curiousWorkmanship.model.Game;
 
 /**
  *
@@ -84,13 +87,11 @@ public class GameMenuView extends MenuView{
     public void viewTheMap()
     {
         System.out.println("\nDisplay the viewTheMaps option selected.");
+        //Game.Map.getTheMap();
     }
     
-    // The viewPrintList method
-    // Purpose: Provides the user with a set of list options
-    // Parameters: none
-    // Returns: none
-    // ===================================     
+
+    
     
     // The viewPrintList method
     // Purpose: list some storehouse's stuffs
