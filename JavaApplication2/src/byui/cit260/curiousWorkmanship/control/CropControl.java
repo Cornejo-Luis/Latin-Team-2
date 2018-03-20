@@ -8,6 +8,7 @@ package byui.cit260.curiousWorkmanship.control;
 import java.util.Random;
 import byui.cit260.curiousWorkmanship.model.CropData;
 import java.util.Scanner;
+import exceptions.CropException;
 
 /**
  *
@@ -79,7 +80,7 @@ public class CropControl {
         // Pre-conditions: acres to buy must be positive
         // and <= ten times the number of people
 
-    public static int buyland(int acresToBuy, int landPrice, CropData cropData)
+    public static void buyland(int acresToBuy, int landPrice, CropData cropData) throws CropException
     {
         int population = cropData.getPopulation();
         int wheatInStore = cropData.getWheatInStore();
@@ -93,15 +94,18 @@ public class CropControl {
         
         //  if acresToBuy < 0, return -1
             if(acresToBuy<0)
-                return -1;
+            throw new CropException("A negative value was input");
+
             
         //  if acresToBuy > 10 x numberOfPeople, return -1
             if(acresToBuy > PEOPLE_PER_ACRE * population)
-                return -1;
+            throw new CropException("There is insufficient acres");
+
         
         //  if wheatInStore < landPrice x acresToBuy, return -1
             if(wheatInStore < landPrice*acresToBuy)
-                return -1;
+            throw new CropException("There is insufficient wheat to buy this much land");
+
         
         //  acresOwned = acresOwned + acresToBuy
             acresOwned = acresOwned + acresToBuy;
@@ -112,9 +116,6 @@ public class CropControl {
         //save values
             cropData.setWheatInStore(wheatInStore);
             cropData.setAcresOwned(acresOwned);
-            
-        //  return acresOwned
-            return acresOwned;        
     }
      
     // The feedPeople method
