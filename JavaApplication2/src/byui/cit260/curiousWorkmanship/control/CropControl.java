@@ -85,12 +85,6 @@ public class CropControl {
         int population = cropData.getPopulation();
         int wheatInStore = cropData.getWheatInStore();
         int acresOwned = cropData.getAcresOwned();
-        /*
-        System.out.println(landPrice);
-        int population = 100;
-        int wheatInStore = 1000;
-        int acresOwned = 20;
-         */
         
         //  if acresToBuy < 0, return -1
             if(acresToBuy<0)
