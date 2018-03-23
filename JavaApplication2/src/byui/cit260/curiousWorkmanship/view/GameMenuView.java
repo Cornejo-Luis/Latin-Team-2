@@ -99,9 +99,7 @@ public class GameMenuView extends MenuView{
     // Returns: none
     //modified: @Nimrod
     public void viewPrintList()
-    {
-      System.out.println("\nDisplay the viewPrintList option selected.");  
-         
+    { 
             //Create a new ListMenuView object.
             ListMenuView printList = new ListMenuView();
             // Display the List

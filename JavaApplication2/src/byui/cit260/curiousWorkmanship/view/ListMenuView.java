@@ -8,6 +8,7 @@ package byui.cit260.curiousWorkmanship.view;
 import byui.cit260.curiousWorkmanship.control.GameControl;
 import byui.cit260.curiousWorkmanship.model.Game;
 import byui.cit260.curiousWorkmanship.model.ListItem;
+import curiousWorkmanship.CuriousWorkmanship;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -75,11 +76,14 @@ public class ListMenuView extends MenuView{
     // ===================================     
     public void viewAnimals()
     {
-        Game theGame = new Game();
+        Game theGame = CuriousWorkmanship.getTheGame( );
         ArrayList<ListItem> animals = theGame.getAnimals();
-        System.out.println(animals);
+        for( int i=0; i < animals.size(); i++ ) {
+            ListItem item = animals.get(i);
+            System.out.println("\nAnimal: " + item.getName() +
+                           "\nQuantity: " + item.getNumber());
+        }
     }
-    
     // The viewTools method
     // Purpose: display tools
     // Parameters: none
