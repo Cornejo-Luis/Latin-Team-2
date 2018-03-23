@@ -130,18 +130,28 @@ public class CropView {
 // Returns: none
  public static void plantCropsView()
  {
-    
-    // Prompt the user to enter the number of acres to plant
-     System.out.print("\nhow many acres of land do you want to plant? "); 
-
-    //  Get the user’s input and save it.
-    int acresToPlant = keyboard.nextInt();
-
-    // Call the plantcrops( ) method in the control layer
-    CropControl.plantcrops(acresToPlant, theCropData);
-   
+    boolean paramsNotOkay;
+        do
+        {
+        paramsNotOkay = false;
+        // Prompt the user to enter the number of acres to plant
+        System.out.print("\nhow many acres of land do you want to plant? "); 
+     
+        //  Get the user’s input and save it.
+        int acresToPlant = keyboard.nextInt();
+        try
+        {
+            // Call the plantcrops( ) method in the control layer
+            CropControl.plantcrops(acresToPlant, theCropData);
+        }
+        catch(CropException e)
+        {
+             System.out.println("I am sorry master, I cannot do this.");
+             System.out.println(e.getMessage());
+             paramsNotOkay = true;
+            }
+        } while(paramsNotOkay);
  }
-
 
 /*------------ The showStarvedView method--------------*/
     // Purpose: interface with the user input for 

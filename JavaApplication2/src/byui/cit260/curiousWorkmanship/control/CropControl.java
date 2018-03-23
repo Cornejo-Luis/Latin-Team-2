@@ -147,7 +147,7 @@ public class CropControl {
         // The City will have enough wheat in storage to plant this many acre
         // The City will have enough population to plant
      
-       public static int plantcrops(int acresToPlant,  byui.cit260.curiousWorkmanship.model.CropData cropData)
+       public static void plantcrops(int acresToPlant,  CropData cropData) throws CropException
      {
         int population = cropData.getPopulation();
         int wheatInStore = cropData.getWheatInStore();
@@ -156,15 +156,15 @@ public class CropControl {
         
          //if acresToplant < 0, return -1
          if (acresToPlant<0)
-             return -1;
+             throw new CropException("A negative value was input");
          
         //if acresToPlant > acres_owned  return -1
         if(acresToPlant>acresOwned)
-            return -1;
+            throw new CropException("We can not plant more than we own");
         
         //if acresToPlant > population * 10 return -1
         if (acresToPlant>population * PEOPLE_PER_ACRE)
-            return -1;
+            throw new CropException("We cannot plant so many acres. There is no enough people to do this");
                     
         //bushelsToPlant = acresToPlant / 2;
         bushelsToPlant = acresToPlant/2;
@@ -175,10 +175,6 @@ public class CropControl {
         //save the values
          cropData.setWheatInStore(wheatInStore);
          cropData.setAcresPlanted(acresToPlant);
-         
-        // return bushelsToPlant
-        return bushelsToPlant;
-
      }
     
        public static int setOffering(int percentOffering){
