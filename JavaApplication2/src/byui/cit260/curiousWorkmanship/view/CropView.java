@@ -161,7 +161,15 @@ public class CropView {
  public static void showStarvedView()
  {
      // Prompt the user to enter the number of acres to buy
-     System.out.println("showStarvedView");        
+     System.out.println("showStarvedView");  
+     
+     int starved = theCropData.getNumStarved();
+     int population = theCropData.getPopulation();
+     if( starved > 0.5 * population) {
+         System.out.println("You have starved too many people...Game Over !!"); 
+     } 
+     else {
+     }
  }
  
   /*------------ The showStarvedView method end--------------*/ 
