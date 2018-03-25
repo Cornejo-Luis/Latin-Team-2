@@ -66,18 +66,31 @@ public class CropView {
     //author: nimrod
  public static void sellLandView()
  {
-    // Get the cost of land for this round.
+     // Get the cost of land for this round.
     int price = CropControl.calcLandCost();
-
+    boolean paramsNotOkay;
      // Prompt the user to enter the number of acres to sell
-     System.out.print("\nHow many acres of land do you wish to sell? "); 
+     System.out.format("Land is selling for %d bushels per acre.%n",price);
+     int toSell;
+        do
+        {
+            paramsNotOkay = false;
+            // Prompt the user to enter the number of acres to sell
+            System.out.print("\nHow many acres of land do you wish to sell? "); 
+            toSell = keyboard.nextInt();
 
-    //  Get the user’s input and save it.
-    int toSell;
-    toSell = keyboard.nextInt();
-
-    // Call the buyLand( ) method in the control layer to buy the land
-    CropControl.sellLand(price, toSell, theCropData);
+            try
+            {
+                    // Call the buyLand( ) method in the control layer to buy the land
+                   CropControl.sellLand(price, toSell, theCropData);
+             }
+             catch(CropException a)
+        {
+             System.out.println("I am sorry master, I cannot do this.");
+             System.out.println(a.getMessage());
+             paramsNotOkay = true;
+            }
+        } while(paramsNotOkay);
    
  }
  
