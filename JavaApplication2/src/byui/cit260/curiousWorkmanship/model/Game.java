@@ -18,6 +18,8 @@ public class Game implements Serializable{
     public static ArrayList<ListItem> animals;
     public static ArrayList<ListItem> tools;
     public static ArrayList<ListItem> provisions;
+    private boolean done = false; //28-03-18 
+
     
     private CropData theCrops = null;
     

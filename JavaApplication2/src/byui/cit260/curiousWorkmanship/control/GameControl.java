@@ -7,6 +7,10 @@ package byui.cit260.curiousWorkmanship.control;
 import byui.cit260.curiousWorkmanship.model.*;
 import java.util.ArrayList;
 import curiousWorkmanship.CuriousWorkmanship;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 /**
  *
  * @author nimrod
@@ -260,13 +264,42 @@ public class GameControl {
 
     }
     
-    public static void saveGame (Game theGame, String theName ) {
-        System.out.println("\nsaveGame method will be created here");
+    public static void saveGame (Game theGame, String filePath) {
         
+     
+            try (FileOutputStream fips = new FileOutputStream(filePath))
+            {
+                ObjectOutputStream output = new ObjectOutputStream(fips);
+
+                output.writeObject(theGame);
+
+            }
+            catch(Exception e)
+            {
+                System.out.println("\nThere was an error writing the saved game file");
+                
+            }
+          
     }
     
-    public static void getSavedGame (String theName ) {
-        System.out.println("\ngetSavedGame method will be created here");
+    // the getSavedGame method
+    // Purpose: load a saved game from disk
+    // Parameters: the file path
+    // Returns: none
+    // Side Effect: the game reference in the driver is updated
+    public static void getSavedGame(String filePath)
+    {
+        Game theNewGame = null;
         
+        try (FileInputStream fips = new FileInputStream(filePath))
+        {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            theNewGame = (Game)  input.readObject();
+        }
+        catch(Exception e)
+        {
+            System.out.println("\nThere was an error reading the saved game file");
+        }
     }
+
 }
