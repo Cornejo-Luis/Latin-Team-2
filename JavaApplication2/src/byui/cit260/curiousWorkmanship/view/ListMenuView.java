@@ -18,6 +18,7 @@ import java.util.Scanner;
  */
 public class ListMenuView extends MenuView{
     
+    Game theGame = CuriousWorkmanship.getTheGame( );
     // The ListMenuView constructor
     // Purpose: displays the list, gets the user's input, and does the 
     //               selected action
@@ -75,8 +76,7 @@ public class ListMenuView extends MenuView{
     // Returns: none
     // ===================================     
     public void viewAnimals()
-    {
-        Game theGame = CuriousWorkmanship.getTheGame( );
+    { 
         ArrayList<ListItem> animals = theGame.getAnimals();
         for( int i=0; i < animals.size(); i++ ) {
             ListItem item = animals.get(i);
@@ -91,9 +91,12 @@ public class ListMenuView extends MenuView{
     // ===================================     
     public void viewTools()
     {
-        Game theGame = new Game();
         ArrayList<ListItem> tools = theGame.getTools();
-        System.out.println(tools);
+        for( int i=0; i < tools.size(); i++ ) {
+            ListItem item = tools.get(i);
+            System.out.println("\nTool: " + item.getName() +
+                           "\nQuantity: " + item.getNumber());
+        }
     }
     
     // The viewProvisions method
@@ -103,9 +106,12 @@ public class ListMenuView extends MenuView{
     // ===================================     
     public void viewProvisions()
     {
-        Game theGame = new Game();
         ArrayList<ListItem> provisions = theGame.getProvisions();
-        System.out.println(provisions);
+        for( int i=0; i < provisions.size(); i++ ) {
+            ListItem item = provisions.get(i);
+            System.out.println("\nProvision: " + item.getName() +
+                           "\nQuantity: " + item.getNumber());
+        }
     }
     
     // The viewAuthors method
