@@ -15,9 +15,9 @@ public class Game implements Serializable{
     public  Map theMap;
     private Player thePlayer;
     private CropData cropData;
-    public static ArrayList<ListItem> animals;
-    public static ArrayList<ListItem> tools;
-    public static ArrayList<ListItem> provisions;
+    public ArrayList<ListItem> animals;
+    public ArrayList<ListItem> tools;
+    public ArrayList<ListItem> provisions;
     private boolean done = false; //28-03-18 
 
     
