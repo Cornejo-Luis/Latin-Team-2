@@ -13,6 +13,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.PrintWriter;
 
 /**
  *
@@ -138,20 +139,20 @@ public class ListMenuView extends MenuView{
        
         // declare a reference to a PrintWriter object
         
-        FileWriter outFile = null;
+        PrintWriter outFile = null;
         // declare a string to hold the file name
         String fileLocation = "tools.txt";
         
         try
         {
              // create the PrintWriter object
-            outFile = new FileWriter(fileLocation);
+            outFile = new PrintWriter(fileLocation);
             // use a for loop to get the data from the ArrayList
             // and output it
                 ArrayList<ListItem> tools = theGame.getTools();
                     for( int i=0; i < tools.size(); i++ ) {
                     ListItem item = tools.get(i);
-                    outFile.write("\nTool: " + item.getName() +
+                    outFile.printf("\nTool: " + item.getName() +
                                    "\nQuantity: " + item.getNumber());
                 }
             
@@ -165,12 +166,7 @@ public class ListMenuView extends MenuView{
         finally
         {
             if(outFile != null) {
-                try{
-                    outFile.close();
-                } 
-                catch(IOException e2){
-                    System.out.println("Error closing file");
-                }
+                outFile.close();
               }
          }
 
