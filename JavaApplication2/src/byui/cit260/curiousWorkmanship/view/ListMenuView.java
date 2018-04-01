@@ -135,22 +135,19 @@ public class ListMenuView extends MenuView{
   public void saveToolList()
     {
         
-       // declare a string to hold the file name
+       
         // declare a reference to a PrintWriter object
-        // prompt the user for a file name, get and save the user’s input
-        FileWriter outFile = null;
         
+        FileWriter outFile = null;
+        // declare a string to hold the file name
         String fileLocation = "tools.txt";
         
         try
         {
              // create the PrintWriter object
-             // get a reference to the ArrayList you want to output
-             // output a heading for the report
+            outFile = new FileWriter(fileLocation);
             // use a for loop to get the data from the ArrayList
             // and output it
-            outFile = new FileWriter(fileLocation);
-            
                 ArrayList<ListItem> tools = theGame.getTools();
                     for( int i=0; i < tools.size(); i++ ) {
                     ListItem item = tools.get(i);
