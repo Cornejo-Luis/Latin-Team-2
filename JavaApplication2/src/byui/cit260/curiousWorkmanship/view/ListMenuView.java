@@ -38,9 +38,10 @@ public class ListMenuView extends MenuView{
            " 2 – Tools in the storehouse\n" +
            " 3 - Provisions in the storehouse\n" +
            " 4 – View the development team\n" +
-           " 5 - Save tools list.\n"+
-           " 6 - Return to the Game Menu.\n",  
-         6);
+           " 5 - Save animals list.\n"+
+           " 6 - Save tools list.\n"+     
+           " 7 - Return to the Game Menu.\n",  
+         7);
     }
     
     // The doAction method
@@ -68,12 +69,16 @@ public class ListMenuView extends MenuView{
             case 4: 
                 viewAuthors();
                 break;
-            // if the option is 5, save tool list 
+            // if the option is 5, save animal list 
             case 5: 
+                saveAnimalList();
+                break;
+                 // if the option is 5, save tool list 
+            case 6: 
                 saveToolList();
                 break;
                 // if the option is 6, go back to the Game Menu.
-            case  6: 
+            case  7: 
                 return;
         }
     }
@@ -86,11 +91,15 @@ public class ListMenuView extends MenuView{
     public void viewAnimals()
     { 
         ArrayList<ListItem> animals = theGame.getAnimals();
-        for( int i=0; i < animals.size(); i++ ) {
-            ListItem item = animals.get(i);
-            System.out.println("\nAnimal: " + item.getName() +
-                           "\nQuantity: " + item.getNumber());
-        }
+            System.out.println("\n\n   Animal Inventory Report             ");
+                // and output it
+            System.out.printf("%n%-20s%10s", "Animal", "Quantity");
+            System.out.printf("%n%-20s%10s", "------", "--------"); 
+            //use a for loop to get the data from the ArrayList
+            for (ListItem item : animals) {
+                System.out.printf("%n%-20s%7d", item.getName(), item.getNumber());
+            }
+        
     }
     // The viewTools method
     // Purpose: display tools
@@ -132,6 +141,56 @@ public class ListMenuView extends MenuView{
         System.out.println("\nDisplay the viewAuthors option selected.");
     }
     
+    // The saveAnimalList method
+    // Purpose: save the animal list
+    // Parameters: none
+    // Returns: none
+    // ===================================  
+    public void saveAnimalList()
+    {
+        // declare a string to hold the file name
+        String fileName;
+        // declare a reference to a PrintWriter object
+        PrintWriter outFile = null;
+        // prompt the user for a file name, get and save the user’s input
+        System.out.println("\n\nEnter the file name where you want to save this list:");
+        keyboard.nextLine(); 
+        fileName = keyboard.nextLine();
+
+        try
+        {
+             // create the PrintWriter object
+            outFile = new PrintWriter(fileName);
+            
+             // get a reference to the ArrayList you want to output
+             ArrayList<ListItem> animals = theGame.getAnimals();
+
+            // output a heading for the report
+            outFile.println("\n\n   Animal Inventory Report             ");
+            // and output it
+            outFile.printf("%n%-20s%10s", "Animal", "Quantity");
+            outFile.printf("%n%-20s%10s", "------", "--------"); 
+            //use a for loop to get the data from the ArrayList
+            for (ListItem item : animals) {
+                outFile.printf("%n%-20s%7d", item.getName(), item.getNumber());
+            }
+            
+            System.out.println("\nReport was saved to " + fileName + " successfully!");
+            outFile.flush();
+        }
+        
+        catch(IOException e)
+        {
+            System.out.println("Error saving the Animal List to a file");
+        }
+        finally
+        {
+            if(outFile != null) {
+                outFile.close();
+              }
+         }
+
+    } 
     
   public void saveToolList()
     {
