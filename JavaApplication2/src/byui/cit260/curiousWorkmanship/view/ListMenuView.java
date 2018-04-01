@@ -9,6 +9,8 @@ import byui.cit260.curiousWorkmanship.control.GameControl;
 import byui.cit260.curiousWorkmanship.model.Game;
 import byui.cit260.curiousWorkmanship.model.ListItem;
 import curiousWorkmanship.CuriousWorkmanship;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -35,8 +37,9 @@ public class ListMenuView extends MenuView{
            " 2 – Tools in the storehouse\n" +
            " 3 - Provisions in the storehouse\n" +
            " 4 – View the development team\n" +
-           " 5 - Return to the Game Menu.\n", 
-         5);
+           " 5 - Save tools list.\n"+
+           " 6 - Return to the Game Menu.\n",  
+         6);
     }
     
     // The doAction method
@@ -64,8 +67,12 @@ public class ListMenuView extends MenuView{
             case 4: 
                 viewAuthors();
                 break;
-            // if the option is 5, go back to the Game Menu.
-            case  5: 
+            // if the option is 5, save tool list 
+            case 5: 
+                saveToolList();
+                break;
+                // if the option is 6, go back to the Game Menu.
+            case  6: 
                 return;
         }
     }
@@ -124,5 +131,51 @@ public class ListMenuView extends MenuView{
         System.out.println("\nDisplay the viewAuthors option selected.");
     }
     
-   
+    
+  public void saveToolList()
+    {
+        
+       // declare a string to hold the file name
+        // declare a reference to a PrintWriter object
+        // prompt the user for a file name, get and save the user’s input
+        FileWriter outFile = null;
+        
+        String fileLocation = "tools.txt";
+        
+        try
+        {
+             // create the PrintWriter object
+             // get a reference to the ArrayList you want to output
+             // output a heading for the report
+            // use a for loop to get the data from the ArrayList
+            // and output it
+            outFile = new FileWriter(fileLocation);
+            
+                ArrayList<ListItem> tools = theGame.getTools();
+                    for( int i=0; i < tools.size(); i++ ) {
+                    ListItem item = tools.get(i);
+                    outFile.write("\nTool: " + item.getName() +
+                                   "\nQuantity: " + item.getNumber());
+                }
+            
+            outFile.flush();
+            
+        }
+        catch(IOException e)
+        {
+            System.out.println("Error saving the Tool List to a file");
+        }
+        finally
+        {
+            if(outFile != null) {
+                try{
+                    outFile.close();
+                } 
+                catch(IOException e2){
+                    System.out.println("Error closing file");
+                }
+              }
+         }
+
+    } 
 }
