@@ -39,9 +39,10 @@ public class ListMenuView extends MenuView{
            " 3 - Provisions in the storehouse\n" +
            " 4 – View the development team\n" +
            " 5 - Save animals list.\n"+
-           " 6 - Save tools list.\n"+     
-           " 7 - Return to the Game Menu.\n",  
-         7);
+           " 6 - Save tools list.\n"+   
+           " 7 - Save provisions list.\n"+ 
+           " 8 - Return to the Game Menu.\n",  
+         8);
     }
     
     // The doAction method
@@ -73,12 +74,15 @@ public class ListMenuView extends MenuView{
             case 5: 
                 saveAnimalList();
                 break;
-                 // if the option is 5, save tool list 
+                 // if the option is 6, save tool list 
             case 6: 
                 saveToolList();
                 break;
+                // if the option is 7, save provision list 
+            case 7:
+                saveProvisionList();
                 // if the option is 6, go back to the Game Menu.
-            case  7: 
+            case  8: 
                 return;
         }
     }
@@ -120,16 +124,22 @@ public class ListMenuView extends MenuView{
     // Purpose: display provisions
     // Parameters: none
     // Returns: none
-    // ===================================     
+    // ===================================      
     public void viewProvisions()
-    {
+    { 
         ArrayList<ListItem> provisions = theGame.getProvisions();
-        for( int i=0; i < provisions.size(); i++ ) {
-            ListItem item = provisions.get(i);
-            System.out.println("\nProvision: " + item.getName() +
-                           "\nQuantity: " + item.getNumber());
-        }
+            System.out.println("\n\n   Provisions Inventory Report             ");
+                // and output it
+            System.out.printf("%n%-20s%10s", "Provisions", "Quantity");
+            System.out.printf("%n%-20s%10s", "------", "--------"); 
+            //use a for loop to get the data from the ArrayList
+            for (ListItem item : provisions) {
+                System.out.printf("%n%-20s%7d", item.getName(), item.getNumber());
+            }
+        
     }
+    
+    
     
     // The viewAuthors method
     // Purpose: display authors
@@ -221,6 +231,56 @@ public class ListMenuView extends MenuView{
         catch(IOException e)
         {
             System.out.println("Error saving the Tool List to a file");
+        }
+        finally
+        {
+            if(outFile != null) {
+                outFile.close();
+              }
+         }
+
+    } 
+  // The saveProvisionList method
+    // Purpose: save the provision list
+    // Parameters: none
+    // Returns: none
+    // ===================================  
+    public void saveProvisionList()
+    {
+        // declare a string to hold the file name
+        String fileName;
+        // declare a reference to a PrintWriter object
+        PrintWriter outFile = null;
+        // prompt the user for a file name, get and save the user’s input
+        System.out.println("\n\nEnter the file name where you want to save this list:");
+        keyboard.nextLine(); 
+        fileName = keyboard.nextLine();
+
+        try
+        {
+             // create the PrintWriter object
+            outFile = new PrintWriter(fileName);
+            
+             // get a reference to the ArrayList you want to output
+             ArrayList<ListItem> provisions = theGame.getProvisions();
+
+            // output a heading for the report
+            outFile.println("\n\n   Provisions Inventory Report             ");
+            // and output it
+            outFile.printf("%n%-20s%10s", "Provisions", "Quantity");
+            outFile.printf("%n%-20s%10s", "------", "--------"); 
+            //use a for loop to get the data from the ArrayList
+            for (ListItem item : provisions) {
+                outFile.printf("%n%-20s%7d", item.getName(), item.getNumber());
+            }
+            
+            System.out.println("\nReport was saved to " + fileName + " successfully!");
+            outFile.flush();
+        }
+        
+        catch(IOException e)
+        {
+            System.out.println("Error saving the Provisions List to a file");
         }
         finally
         {

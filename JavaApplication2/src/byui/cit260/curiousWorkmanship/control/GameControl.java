@@ -92,6 +92,8 @@ public class GameControl {
         
         provisions.add(new ListItem("wheat", 2));
         provisions.add(new ListItem("seeds", 3));
+        provisions.add(new ListItem("cereals", 5));
+        provisions.add(new ListItem("legumes", 4));
 
        
         theGame.setProvisions(provisions);
