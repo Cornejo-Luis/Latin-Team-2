@@ -113,57 +113,31 @@ public class GameMenuView extends MenuView{
     // Returns: none
    
     public void moveNewLocation()
-    {        
-        // Display a message to enter coordinates
-        System.out.println("\nPlease type your coordinates: " +
-                            "\nEnter the x coordinate:"
-                            );
+    {   
+        Game theGame = CuriousWorkmanship.getTheGame( );
+        Map theMap = theGame.getTheMap();
         
+        String initLoca = theMap.getLocation(0, 0).getDescription();
+        System.out.println("\nRight now your coordinates are (0,0)" +
+                            initLoca);
+        // Display a message to enter coordinates
+        System.out.println("\nEnter the coordinates of the location you want to move to. ");
+       
+        System.out.println("\nEnter the x coordinate(0-4):");                  
         int cols = keyboard.nextInt();
         
-        System.out.println("\nEnter the y coordinate:");
-        
+        System.out.println("\nEnter the y coordinate(0-4):");
         int rows = keyboard.nextInt();
-        
+
         String description;
-        
-        if (cols == 1 && (rows > 0 && rows<=2)) {
-            description = "\nYou are on the Desert. The desert serve us a" +
-                        "\nnatural protecction from beasts and the Lamanites ";
-        } else if (cols == 1 && ( rows > 2 && rows <= 5)){
-            description = "\nYou are on the borders near to the Lamanites. If you" +
-                        "\nwant to keep yourselve save, you must return from"+ 
-                        "\nwhere you came.  ";
-        } else if(cols == 2 && ( rows > 0 && rows <= 5)){
-            description = "\nYou are on an undeveloped land .Fifteen years ago, City of Aaron embarked" +
-                          "\non a grand project to cultivate farmland in the desert and create new towns." + 
-                          "\nBut massive projects like this undeveloped land have" +
-                          "\nlanguished due to mismanagement and corruption." ;
-        } else if(cols == 3 && rows == 1){
-            description = "\nYou are on the fertile banks of the River." +
-                          "\nIn the spring this low farmland floods and is covered with rich" +
-                          "\nnew soil. Wheat is planted as far as you can see."; 
-        } else if(cols == 3 && ( rows > 1 && rows < 5)){
-            description = "\nThe village is one of the most extreme examples" +
-                          "\nof City of Aaron plan to green its deserts,"+ 
-                          "\nor take once-uninhabitable earth and convert it to farmland. "; 
-        } else if(cols == 3 && rows == 5){
-            description = "\nYou are on the Ruler's Court." +
-                          "\nYou can come here whenever you feel the town is in danger.";  
-        } else if(cols == 4 && rows == 1){
-            description = "\nYou are on The City’s Granary and Storehouse." +
-                          "\nThis is all you have in store. Be wise when spending it.";  
-        } else if(cols == 4 && ( rows > 1 && rows <= 5)){
-            description = "\nYou are standing in one of the city’s wheat fields." +
-                          "\nThere is nothing but wheat as far as the eye can see." +
-                          "\nWe hope to have a bountiful harvest this year."; 
+        if ((cols >= 0 && cols <5) && (cols >= 0 && cols <5)){
+            description = theMap.getLocation(cols,rows).getDescription();
         } else {
-            description = "\nYou are on the River. The river is the source" +
-                          "\nof life for our city. The river marks the eastern " +
-                          "\nboundary of the city - it is wilderness to the East.";
+            description = "There was an error with your coordinates. You can go back to the menu and try again.";
         }
         
-        System.out.print(description);
+        System.out.println(description);   
+             
     }  
     // The manageTheCrops method
     // Purpose: display Manage the Crops
