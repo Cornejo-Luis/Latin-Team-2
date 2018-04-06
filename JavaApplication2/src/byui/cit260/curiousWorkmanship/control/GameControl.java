@@ -182,7 +182,7 @@ public class GameControl {
         
         
         // define the string for the Ruler's Court
-        String court = "\nYou are on the Ruler's Court." +
+        String court = "\nYou are in the Ruler's Court." +
         "\nYou can come here whenever you feel the town is in danger."; 
 
         // set a court location with a hint
@@ -192,7 +192,7 @@ public class GameControl {
         theMap.setLocation(4, 2, loc);
         
         // define the string for the Ruler's Court
-        String granary = "\nYou are on The City’s Granary and Storehouse." +
+        String granary = "\nYou are in The City’s Granary and Storehouse." +
         "\nThis is all you have in store. Be wise when spending it."; 
 
         // set a court location with a hint
@@ -219,7 +219,8 @@ public class GameControl {
         /*--------------------------*/
        
         // define the string for undevelop Land location
-        String undevelopLand = "\nFifteen years ago, City of Aaron embarked on a grand project to cultivate farmland in" +
+        String undevelopLand = "\nYou are standing on an undeveloped land." +
+                         "\nFifteen years ago, City of Aaron embarked on a grand project to cultivate farmland in" +
                         "\nthe desert and create new towns. But massive projects like undevelopeland have "+ 
                         "\nlanguished due to mismanagement and corruption.  ";
 
@@ -238,7 +239,8 @@ public class GameControl {
         /*--------------------------*/
         
         // define the string for undevelop Land location
-        String village = "\nThe village is one of the most extreme examples" +
+        String village ="\nYou are in the village." +
+                        "\nThe village is one of the most extreme examples" +
                         "\nof City of Aaron plan to green its deserts,"+ 
                         "\nor take once-uninhabitable earth and convert it to farmland. ";
 
@@ -303,5 +305,4 @@ public class GameControl {
             System.out.println("\nThere was an error reading the saved game file");
         }
     }
-
 }
