@@ -116,28 +116,34 @@ public class GameMenuView extends MenuView{
     {   
         Game theGame = CuriousWorkmanship.getTheGame( );
         Map theMap = theGame.getTheMap();
+        Player thePlayer = theGame.getThePlayer();
         
-        String initLoca = theMap.getLocation(0, 0).getDescription();
-        System.out.println("\nRight now your coordinates are (0,0)" +
+        //Get current location
+        int playerCol = thePlayer.getCol();
+        int playerRow = thePlayer.getRow();
+        String initLoca = theMap.getLocation(playerRow,playerCol).getDescription();
+        //Display current location
+        System.out.println("\nRight now your coordinates are (" + playerCol + ", " + playerRow + ")."+
                             initLoca);
+        
         // Display a message to enter coordinates
         System.out.println("\nEnter the coordinates of the location you want to move to. ");
-       
+        //Display a message to enter the x coordinate
         System.out.println("\nEnter the x coordinate(0-4):");                  
         int cols = keyboard.nextInt();
-        
+        //Display a message to enter the y coordinate
         System.out.println("\nEnter the y coordinate(0-4):");
         int rows = keyboard.nextInt();
-
-        String description;
-        if ((cols >= 0 && cols <5) && (cols >= 0 && cols <5)){
-            description = theMap.getLocation(cols,rows).getDescription();
-        } else {
-            description = "There was an error with your coordinates. You can go back to the menu and try again.";
-        }
+        //Get description according to coordinates
+        String description = theMap.getLocation(rows,cols).getDescription();
+        String message = description + "\nYour new coordinates are (" + cols + ", " + rows + ")."; 
         
-        System.out.println(description);   
-             
+        //Save new coordinates
+        thePlayer.setCol(cols);
+        thePlayer.setRow(rows);
+        
+        //Display description and new coordinates
+        System.out.println(message);
     }  
     // The manageTheCrops method
     // Purpose: display Manage the Crops

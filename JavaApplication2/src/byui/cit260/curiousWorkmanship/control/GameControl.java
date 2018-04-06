@@ -132,7 +132,7 @@ public class GameControl {
         /*--------------------------*/
         
         // define the string for the Desert location
-        String desert = "\nYou are on the Desert. The desert serve us a" +
+        String desert = "\nYou are on the Desert. The desert serves us a" +
                         "\nnatural protecction from beasts and the Lamanites ";
 
         // create a new Location object
@@ -304,5 +304,14 @@ public class GameControl {
         {
             System.out.println("\nThere was an error reading the saved game file");
         }
+    }
+    
+    public static void setIntialCoordinates() {
+        int row = 0;
+        int col = 0;
+        
+        Player thePlayer = new Player();
+        thePlayer.setCol(col);
+        thePlayer.setRow(row);
     }
 }
