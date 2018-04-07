@@ -113,11 +113,23 @@ public class ListMenuView extends MenuView{
     public void viewTools()
     {
         ArrayList<ListItem> tools = theGame.getTools();
+        
+        System.out.println("\n\n       Tool Report          ");
+                // and output it
+            System.out.printf("%n%-15s%10s", "Tool", "Quantity");
+            System.out.printf("%n%-15s%10s", "------", "--------"); 
+            //use a for loop to get the data from the ArrayList
+            for (ListItem item : tools) {
+                System.out.printf("%n%-15s%7d", item.getName(), item.getNumber());
+            }
+        
+       
+        /*alternative
         for( int i=0; i < tools.size(); i++ ) {
             ListItem item = tools.get(i);
             System.out.println("\nTool: " + item.getName() +
                            "\nQuantity: " + item.getNumber());
-        }
+        }*/
     }
     
     // The viewProvisions method
