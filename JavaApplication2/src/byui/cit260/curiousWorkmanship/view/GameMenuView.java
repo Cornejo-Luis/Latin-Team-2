@@ -91,7 +91,7 @@ public class GameMenuView extends MenuView{
         Game theGame = CuriousWorkmanship.getTheGame( );
         Map theMap = theGame.getTheMap();
         
-        System.out.println("--------------Game Map--------------");
+        System.out.println("        *** Village Map ***");
         for(int i=0; i<MAX_ROW; i++){
             System.out.print("|");
                 for(int j=0; j<MAX_COL; j++){
@@ -102,9 +102,9 @@ public class GameMenuView extends MenuView{
             }
             System.out.println("|");
         }
-        System.out.println("------------------------------------");
+
         System.out.println(
-                "  Key:\n"
+                "\n  Key:\n"
                 + "  |V| - Court\n"
                 + "  !!! - Farm Land\n"
                 + "  ~~~ - River\n"
