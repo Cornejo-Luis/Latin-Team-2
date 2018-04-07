@@ -188,7 +188,7 @@ public class GameControl {
         // set a court location with a hint
         loc = new Location();
         loc.setDescription(court + "\nOne peson needs at least twenty bushels of wheat to live.");
-        loc.setSymbol("|VV|");
+        loc.setSymbol("|V|");
         theMap.setLocation(4, 2, loc);
         
         // define the string for the Ruler's Court
@@ -229,7 +229,7 @@ public class GameControl {
 
         // use setters in the Location class to set the description and symbol
         loc.setDescription(undevelopLand);
-        loc.setSymbol("??????");  
+        loc.setSymbol("???");  
 
         // set this location       
         for(int i = 0; i < MAX_ROW; i++)
@@ -249,7 +249,7 @@ public class GameControl {
 
         // use setters in the Location class to set the description and symbol
         loc.setDescription(village);
-        loc.setSymbol("_¬_¬_");  
+        loc.setSymbol("¬_¬");  
 
         // set this location       
         for(int i = 1; i < 4; i++)

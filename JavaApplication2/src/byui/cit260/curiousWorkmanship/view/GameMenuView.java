@@ -27,6 +27,8 @@ import byui.cit260.curiousWorkmanship.model.Game;
  * @author Luis
  */
 public class GameMenuView extends MenuView{
+    private static final int MAX_ROW = 5;
+    private static final int MAX_COL = 5;
     
     // The GameMenuView method
     // Purpose: Initialize the menu data
@@ -89,18 +91,29 @@ public class GameMenuView extends MenuView{
         Game theGame = CuriousWorkmanship.getTheGame( );
         Map theMap = theGame.getTheMap();
         
-       
-        for(int i=0; i<5; i++){
-            System.out.println("---Game Map---");
+        System.out.println("--------------Game Map--------------");
+        for(int i=0; i<MAX_ROW; i++){
             System.out.print("|");
-            for(int j=0; j<5; j++){
-                String description = theMap.getLocation(i,j).getSymbol();
-                System.out.print(description);
-                if(j!=4) 
-                    System.out.print("\t");
+                for(int j=0; j<MAX_COL; j++){
+                        String description = theMap.getLocation(i,j).getSymbol();
+                        System.out.print(description);
+                        if(j!= MAX_COL-1) 
+                            System.out.print("\t");
             }
             System.out.println("|");
         }
+        System.out.println("------------------------------------");
+        System.out.println(
+                "  Key:\n"
+                + "  |V| - Court\n"
+                + "  !!! - Farm Land\n"
+                + "  ~~~ - River\n"
+                + "  --- - desert\n"
+                + "  |=| - Lamanite Border\n"
+                + "  vvv - Wheat Field\n"
+                + "  .-. - Granary $ Storehouse\n"
+                + "  ??? - Undeveloped land\n"
+                + "  ¬_¬ - Village");
         
        
     }
