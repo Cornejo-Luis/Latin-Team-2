@@ -86,8 +86,23 @@ public class GameMenuView extends MenuView{
     // ===================================     
     public void viewTheMap()
     {
-        System.out.println("\nDisplay the viewTheMaps option selected.");
-        //Game.Map.getTheMap();
+        Game theGame = CuriousWorkmanship.getTheGame( );
+        Map theMap = theGame.getTheMap();
+        
+       
+        for(int i=0; i<5; i++){
+            System.out.println("---Game Map---");
+            System.out.print("|");
+            for(int j=0; j<5; j++){
+                String description = theMap.getLocation(i,j).getSymbol();
+                System.out.print(description);
+                if(j!=4) 
+                    System.out.print("\t");
+            }
+            System.out.println("|");
+        }
+        
+       
     }
     
 
