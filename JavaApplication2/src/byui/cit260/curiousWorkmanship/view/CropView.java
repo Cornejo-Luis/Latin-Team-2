@@ -186,19 +186,33 @@ public class CropView {
  }
  
   /*------------ The showStarvedView method end--------------*/ 
- 
- 
- // The runCropsView method()
+  
+// The runCropsView method()
 // Purpose: runs the Hamurabi game
 // Parameters: none
 // Returns: none
 public static void runCropsView()
 {
+    int population = theCropData.getPopulation();
+    int acresOwned = theCropData.getAcresOwned();
+    int wheatInStore = theCropData.getWheatInStore();
+    int years=theCropData.getYear();
+    for (int i=1;i<12;i++)
+    {
+        System.out.println("\n--------- City of Aaron the "+i+ " year of your reign ------------");
+        
+        System.out.println("Population is now "+population+" inhabitants");
+        System.out.println("The City now owns "+acresOwned+" acres of land");
+        System.out.println("Now you have "+wheatInStore+" bushels in store");
     
-    buyLandView();
-    sellLandView();
-    feedPeopleView();
-    plantCropsView();
+        buyLandView();
+        sellLandView();
+        feedPeopleView();
+        plantCropsView();
+        
+        years = i;
+        System.out.println("year #"+years);
+    }
  /*
 sellLandView()
 feedPeopleView()
