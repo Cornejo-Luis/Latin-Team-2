@@ -121,14 +121,14 @@ public class CropControl {
      public static void feedPeople(int wheatToFeed, CropData cropData) throws CropException
     {
         int wheatInStore = cropData.getWheatInStore();
-        
+         
         // if wheatToFeed < 0, return -1
            if (wheatToFeed < 0)
            throw new CropException("A negative value was input");
         // if wheatToFeed > wheatInStore, return -1
            if (wheatToFeed > wheatInStore)
            throw new CropException("The amount of wheat to feed exceeds the amount of wheat in store.");
-        
+           
         // wheatInStore = wheatInStore - wheatToFeed
            wheatInStore = wheatInStore - wheatToFeed;
         //save the values   

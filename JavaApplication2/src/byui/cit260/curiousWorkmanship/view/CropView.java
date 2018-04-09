@@ -10,6 +10,7 @@ import byui.cit260.curiousWorkmanship.control.*;
 import java.util.Scanner;
 import curiousWorkmanship.CuriousWorkmanship;
 import exceptions.CropException;
+import java.util.Random;
 
 /**
  *
@@ -24,6 +25,9 @@ public class CropView {
  // Get reference to the Game object and the Crops object
  private static Game theGame = CuriousWorkmanship.getTheGame();
  private static CropData theCropData = theGame.getCropData();
+ 
+ //random number generator
+ private static Random random = new Random();
     
      
  
@@ -37,7 +41,7 @@ public class CropView {
     int price = CropControl.calcLandCost();
 
      // Prompt the user to enter the number of acres to buy
-     System.out.format("Land is selling for %d bushels per acre.%n",price);
+     //System.out.format("Land is selling for %d bushels per acre.%n",price);
         int toBuy;
         boolean paramsNotOkay;
         do
@@ -127,6 +131,7 @@ public class CropView {
         try
         {
             CropControl.feedPeople(wheatForPeople,theCropData);
+            CropControl.calcStarved(wheatForPeople,theCropData);
         }
         catch(CropException e)
         {
@@ -152,10 +157,12 @@ public class CropView {
      
         //  Get the user’s input and save it.
         int acresToPlant = keyboard.nextInt();
+        //int cropYield = 7;
         try
         {
             // Call the plantcrops( ) method in the control layer
             CropControl.plantcrops(acresToPlant, theCropData);
+            //CropControl.harvestCrops(cropYield, theCropData);
         }
         catch(CropException e)
         {
@@ -174,15 +181,16 @@ public class CropView {
  public static void showStarvedView()
  {
      // Prompt the user to enter the number of acres to buy
-     System.out.println("showStarvedView");  
+     //System.out.println("showStarvedView");  
      
      int starved = theCropData.getNumStarved();
      int population = theCropData.getPopulation();
      if( starved > 0.5 * population) {
-         System.out.println("You have starved too many people...Game Over !!"); 
+         System.out.println("\nYou have starved too many people !!");
+         System.out.println("due this extreme mismanagement you have been impeached and thrown out off City of Aaron ...Game Over !!");
+         System.exit(0);
      } 
-     else {
-     }
+    
  }
  
   /*------------ The showStarvedView method end--------------*/ 
@@ -197,7 +205,8 @@ public static void runCropsView()
     int acresOwned = theCropData.getAcresOwned();
     int wheatInStore = theCropData.getWheatInStore();
     int years=theCropData.getYear();
-    for (int i=1;i<12;i++)
+    
+    for (int i=1;i<11;i++)
     {
         System.out.println("\n--------- City of Aaron the "+i+ " year of your reign ------------");
         
@@ -208,19 +217,27 @@ public static void runCropsView()
         buyLandView();
         sellLandView();
         feedPeopleView();
+        showStarvedView();
         plantCropsView();
+        
+        population = theCropData.getPopulation();
+        acresOwned = theCropData.getAcresOwned();
+        wheatInStore = theCropData.getWheatInStore();
         
         years = i;
         System.out.println("year #"+years);
+        
+        if(i==10)
+        {
+            System.out.println("\nCongratulations! you have been able to survive 10 years of reign. These are the results: ");
+            System.out.println("Population: "+population+" inhabitants");
+            System.out.println("Acres: "+acresOwned+" acres of land");
+            System.out.println("Wheat: "+wheatInStore+" bushels in store");
+            
+            System.out.println("\nThanks for play the game!");
+            System.exit(0);
+        }
     }
- /*
-sellLandView()
-feedPeopleView()
-plantCropsView()
-showStarvedView()
-displayCropsReportView()
-    */
-
 }
 /*------------ The displayCropReport() method--------------*/
     // Purpose: interface with the user input for 
